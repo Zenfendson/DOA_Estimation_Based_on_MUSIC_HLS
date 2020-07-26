@@ -62,7 +62,7 @@ void music(float X[N_SAMPLEN][N_SENSOR], int DOA_src, int DOA_interfer, float al
 				Autocorr_Buffer[l][n] = Xj_f[j][j][n];
 			}
 			Autocorrelation(Rx, Autocorr_Buffer);
-			
+
 		}
 	}
 }
