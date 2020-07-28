@@ -1,23 +1,5 @@
 #include "music.h"
 
-struct complex mul_complex(struct complex a, struct complex b) {
-	struct complex result;
-	result.real = a.real * b.real - a.imag * b.imag;
-	result.imag = a.imag * b.real + a.real * b.imag;
-	return result;
-}
-struct complex add_complex(struct complex a, struct complex b) {
-	struct complex result;
-	result.real = a.real + b.real;
-	result.imag = a.imag + b.imag;
-	return result;
-}
-struct complex conjugate(struct complex a) {
-	struct complex result;
-	result.real = a.real;
-	result.imag = 0 - a.imag;
-	return result;
-}
 void sort_eigval(float eigval[N_SENSOR], int sort_index[N_SENSOR]) {
 	for (int i = 0; i < N_SENSOR; i++) {
 		sort_index[i] = i;
@@ -35,43 +17,39 @@ void sort_eigval(float eigval[N_SENSOR], int sort_index[N_SENSOR]) {
 		sort_index[i] = temp;
 	}
 }
-void eig(struct complex Rx[N_SENSOR][N_SENSOR], struct complex U[N_SENSOR][N_SENSOR], float eigval[N_SENSOR]);
-void fft(struct complex x[N_FREQ]);
-void Autocorrelation(struct complex Rx[N_SENSOR][N_SENSOR], struct complex X[N_STFT][N_SENSOR]) {
+void eig(complex_float Rx[N_SENSOR][N_SENSOR], complex_float U[N_SENSOR][N_SENSOR], float eigval[N_SENSOR]);
+void fft(complex_float x[N_FREQ]);
+void Autocorrelation(complex_float Rx[N_SENSOR][N_SENSOR], complex_float X[N_STFT][N_SENSOR]) {
 	for (int x = 0; x < N_SENSOR; x++) {
 		for (int y = 0; y < N_SENSOR; y++) {
-			struct complex temp;
-			temp.real = 0.0;
-			temp.imag = 0.0;
+			complex_float temp(0.0, 0.0);
 			for(int l = 0; l < N_STFT; l++) {
-				temp = add_complex(temp, mul_complex(X[l][x], conjugate(X[l][y])));
+				temp += X[l][x] * x_conj(X[l][y]);
 			}
-			Rx[x][y].real = temp.real / N_STFT;
-			Rx[x][y].imag = temp.imag / N_STFT;
+			Rx[x][y] = temp / N_STFT;
 		}
 	}
 }
-void music(float X[N_SAMPLE][N_SENSOR], int DOA_src, int DOA_interfer, float align_out) {
+void music(float X[N_SAMPLE][N_SENSOR], int DOA_src, int DOA_interfer, float align_out[N_SAMPLE]) {
 	
-	struct complex FFT_Buffer[N_FREQ];
-	struct complex Xl_f[N_STFT][N_FREQ][N_SENSOR];
-	struct complex Xj_f[N_FREQ][N_STFT][N_SENSOR];
-	struct complex Autocorr_Buffer[N_STFT][N_SENSOR];
-	struct complex Rx[N_SENSOR][N_SENSOR];
-	struct complex U[N_SENSOR][N_SENSOR];
-	struct complex Un[N_SENSOR][N_SENSOR - N_SOURCE];
-	struct complex UU[N_SENSOR][N_SENSOR];
-	struct complex AUU[361][N_SENSOR];
-	struct complex w[361];
+	complex_float FFT_Buffer[N_FREQ];
+	complex_float Xl_f[N_STFT][N_FREQ][N_SENSOR];
+	complex_float Xj_f[N_FREQ][N_STFT][N_SENSOR];
+	complex_float Autocorr_Buffer[N_STFT][N_SENSOR];
+	complex_float Rx[N_SENSOR][N_SENSOR];
+	complex_float U[N_SENSOR][N_SENSOR];
+	complex_float Un[N_SENSOR][N_SENSOR - N_SOURCE];
+	complex_float UU[N_SENSOR][N_SENSOR];
+	complex_float AUU[361][N_SENSOR];
+	complex_float w[361];
+	complex_float a_theta[N_SENSOR][361];
+	complex_float temp;
 	float P_sm[361];
 	float eigval[N_SENSOR];
 	int sort_index[N_SENSOR];
 	float p[N_SENSOR] = {-0.375, -0.125, 0.125, 0.375};
 	float theta[361];
-	struct complex a_theta[N_SENSOR][361];
 	float fc[N_FREQ];
-	struct complex temp;
-
 
 	for(int j = 0; j < N_FREQ; j++) {
 		if (j < N_FREQ/2) {
@@ -88,8 +66,7 @@ void music(float X[N_SAMPLE][N_SENSOR], int DOA_src, int DOA_interfer, float ali
 	for(int l = 0; l < N_STFT; l++) {
 		for(int n = 0; n < N_SENSOR; n++) {
 			for(int j = 0; j < N_FREQ; j++) {
-				FFT_Buffer[j].real = X[(l-1)*N_FREQ+j][n];
-				FFT_Buffer[j].imag = X[(l-1)*N_FREQ+j][n];
+				FFT_Buffer[j] = X[(l-1)*N_FREQ+j][n];
 			}
 //			fft(FFT_Buffer);
 			for(int j = 0; j< N_FREQ; j++) {
@@ -118,36 +95,36 @@ void music(float X[N_SAMPLE][N_SENSOR], int DOA_src, int DOA_interfer, float ali
 		}
 		for (int x = 0; x < N_SENSOR; x++) {
 			for (int y = 0; y < 361; y++) {
-				a_theta[x][y].real = cos(2*PIE*fc[jj]*p[x]*sin(theta[y]*PIE/180)/VELOCITY);
-				a_theta[x][y].imag = sin(2*PIE*fc[jj]*p[x]*sin(theta[y]*PIE/180)/VELOCITY);
+				a_theta[x][y].real() = cos(2*PIE*fc[jj]*p[x]*sin(theta[y]*PIE/180)/VELOCITY);
+				a_theta[x][y].imag() = sin(2*PIE*fc[jj]*p[x]*sin(theta[y]*PIE/180)/VELOCITY);
 			}
 		}
 
 		for(int i = 0; i < N_SENSOR; i++) {
 			for(int j = 0; j < N_SENSOR; j++) {
-				UU[i][j] = add_complex(mul_complex(Un[i][0], conjugate(Un[j][0])), mul_complex(Un[i][1], conjugate(Un[j][1])));
+				UU[i][j] = Un[i][0] * x_conj(Un[j][0]) + Un[i][1] * x_conj(Un[j][1]);
 			}
 		}
 		for(int i = 0; i < 361; i++) {
 			for(int j = 0; j < N_SENSOR; j++) {
-				temp.real = 0.0;
-				temp.imag = 0.0;
+				temp.real() = 0.0;
+				temp.imag() = 0.0;
 				for (int k = 0; k < N_SENSOR; k++) {
-					temp = add_complex(temp, mul_complex(conjugate(a_theta[i][k]), UU[k][j]));
+					temp += x_conj(a_theta[i][k]) * UU[k][j];
 				}
 				AUU[i][j] = temp;
 			}
 		}
 		for(int i = 0; i < 361; i++) {
-			temp.real = 0.0;
-			temp.imag = 0.0;
+			temp.real() = 0.0;
+			temp.imag() = 0.0;
 			for (int k = 0; k < N_FREQ; k++) {
-				temp = add_complex(temp, mul_complex(AUU[i][k], a_theta[i][k]));
+				temp += AUU[i][k] * x_conj(a_theta[i][k]);
 			}
-			w[i] = add_complex(w[i], temp);
+			w[i] += temp;
 		}
 	}
 	for (int i = 0; i < 361; i++) {
-		P_sm[i] = 1/w[i].real;
+		P_sm[i] = 1/w[i].real();
 	}
 }

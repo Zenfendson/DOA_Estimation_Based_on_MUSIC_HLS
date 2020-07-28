@@ -6,7 +6,6 @@
   </source>
   <testbench>
     <originFiles name="test.cpp" path="C:\Users\zhangqx\workspace\Xilinx_Intern\summer\project\DOA_Estimation_Based_on_MUSIC_HLS\src\test.cpp"/>
-    <originFiles name="test.cpp" path="C:\Users\zhangqx\workspace\Xilinx_Intern\summer\project\DOA_Estimation_Based_on_MUSIC_HLS\src\test.cpp"/>
     <originFiles name="test_audio" path="C:\Users\zhangqx\workspace\Xilinx_Intern\summer\project\DOA_Estimation_Based_on_MUSIC_HLS\test_audio"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

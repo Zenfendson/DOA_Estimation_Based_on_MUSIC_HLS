@@ -1,5 +1,5 @@
 INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/vivado_hls.exe'
-INFO: [HLS 200-10] For user 'zhangqx' on host 'desktop-2l4t92t' (Windows NT_amd64 version 6.2) on Tue Jul 28 19:34:55 +0800 2020
+INFO: [HLS 200-10] For user 'zhangqx' on host 'desktop-2l4t92t' (Windows NT_amd64 version 6.2) on Wed Jul 29 00:27:07 +0800 2020
 INFO: [HLS 200-10] In directory 'C:/Users/zhangqx/workspace/Xilinx_Intern/summer/project/DOA_Estimation_Based_on_MUSIC_HLS'
 INFO: [HLS 200-10] Opening project 'C:/Users/zhangqx/workspace/Xilinx_Intern/summer/project/DOA_Estimation_Based_on_MUSIC_HLS/MUSIC'.
 INFO: [HLS 200-10] Opening solution 'C:/Users/zhangqx/workspace/Xilinx_Intern/summer/project/DOA_Estimation_Based_on_MUSIC_HLS/MUSIC/solution1'.
@@ -9,13 +9,36 @@ INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
    Compiling ../../../../src/test.cpp in debug mode
    Generating csim.exe
-******audio file read test**********
-|======================================|
-Num Channels: 1
-Num Samples Per Channel: 48000
-Sample Rate: 16000
-Bit Depth: 16
-Length in Seconds: 3
-|======================================|
+In file included from C:/Xilinx/Vivado/2018.3/include/floating_point_v7_0_bitacc_cmodel.h:143:0,
+                 from C:/Xilinx/Vivado/2018.3/include/hls_fpo.h:186,
+                 from C:/Xilinx/Vivado/2018.3/include/hls_half.h:44,
+                 from C:/Xilinx/Vivado/2018.3/include/etc/ap_private.h:90,
+                 from C:/Xilinx/Vivado/2018.3/include/ap_common.h:641,
+                 from C:/Xilinx/Vivado/2018.3/include/ap_fixed.h:54,
+                 from C:/Xilinx/Vivado/2018.3/include/hls/linear_algebra/utils/x_hls_matrix_utils.h:35,
+                 from C:/Xilinx/Vivado/2018.3/include/hls/linear_algebra/hls_qrf.h:57,
+                 from ../../../../src/music.h:7,
+                 from ../../../../src/test.cpp:1:
+C:/Xilinx/Vivado/2018.3/include/gmp.h:62:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from C:/Xilinx/Vivado/2018.3/include/hls_fpo.h:186:0,
+                 from C:/Xilinx/Vivado/2018.3/include/hls_half.h:44,
+                 from C:/Xilinx/Vivado/2018.3/include/etc/ap_private.h:90,
+                 from C:/Xilinx/Vivado/2018.3/include/ap_common.h:641,
+                 from C:/Xilinx/Vivado/2018.3/include/ap_fixed.h:54,
+                 from C:/Xilinx/Vivado/2018.3/include/hls/linear_algebra/utils/x_hls_matrix_utils.h:35,
+                 from C:/Xilinx/Vivado/2018.3/include/hls/linear_algebra/hls_qrf.h:57,
+                 from ../../../../src/music.h:7,
+                 from ../../../../src/test.cpp:1:
+C:/Xilinx/Vivado/2018.3/include/floating_point_v7_0_bitacc_cmodel.h:135:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+########### audio file read ##########
+result: 
+0+0i  0+0i  0+0i  0+0i  
+1+0i  1+0i  1+0i  1+0i  
+2+0i  2+0i  2+0i  2+0i  
+3+0i  3+0i  3+0i  3+0i  
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************

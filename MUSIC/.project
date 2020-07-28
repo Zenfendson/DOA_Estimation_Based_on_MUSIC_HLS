@@ -37,19 +37,9 @@
 			<location>C:/Users/zhangqx/workspace/Xilinx_Intern/summer/project/DOA_Estimation_Based_on_MUSIC_HLS/MUSIC/.apc/.tb</location>
 		</link>
 		<link>
-			<name>.reference/AudioFile.h</name>
+			<name>.reference/hls_qrf.h</name>
 			<type>1</type>
-			<location>C:/Users/zhangqx/workspace/Xilinx_Intern/summer/project/DOA_Estimation_Based_on_MUSIC_HLS/src/AudioFile.h</location>
-		</link>
-		<link>
-			<name>.reference/cmath</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado/2018.3/msys64/mingw64/include/c++/6.2.0/cmath</location>
-		</link>
-		<link>
-			<name>.reference/mem.h</name>
-			<type>1</type>
-			<location>C:/Xilinx/Vivado/2018.3/msys64/mingw64/x86_64-w64-mingw32/include/mem.h</location>
+			<location>C:/Xilinx/Vivado/2018.3/include/hls/linear_algebra/hls_qrf.h</location>
 		</link>
 		<link>
 			<name>.reference/music.h</name>
@@ -57,9 +47,9 @@
 			<location>C:/Users/zhangqx/workspace/Xilinx_Intern/summer/project/DOA_Estimation_Based_on_MUSIC_HLS/src/music.h</location>
 		</link>
 		<link>
-			<name>.reference/string.h</name>
+			<name>.reference/x_hls_complex.h</name>
 			<type>1</type>
-			<location>C:/Xilinx/Vivado/2018.3/msys64/mingw64/x86_64-w64-mingw32/include/string.h</location>
+			<location>C:/Xilinx/Vivado/2018.3/include/hls/linear_algebra/utils/x_hls_complex.h</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>
@@ -75,11 +65,6 @@
 			<name>testbench/test.cpp</name>
 			<type>1</type>
 			<location>C:/Users/zhangqx/workspace/Xilinx_Intern/summer/project/DOA_Estimation_Based_on_MUSIC_HLS/src/test.cpp</location>
-		</link>
-		<link>
-			<name>testbench/test_audio</name>
-			<type>2</type>
-			<location>C:/Users/zhangqx/workspace/Xilinx_Intern/summer/project/DOA_Estimation_Based_on_MUSIC_HLS/test_audio</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>

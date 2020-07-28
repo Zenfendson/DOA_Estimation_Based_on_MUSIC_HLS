@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cstring>
 #include <cmath>
+#include "hls/linear_algebra/hls_qrf.h"
 
 #define FS 16000
 #define N_SENSOR 4
@@ -17,10 +18,7 @@
 
 using namespace std;
 
-struct complex {
-	float real;
-	float imag;
-};
+typedef hls::x_complex<float> complex_float;
 
 void music(
 	float X[N_SAMPLE][N_SENSOR],	// input signal
@@ -30,5 +28,5 @@ void music(
 );
 
 void sort_eigval(float eigval[N_SENSOR], int sort_index[N_SENSOR]);
-
+void Autocorrelation(complex_float Rx[N_SENSOR][N_SENSOR], complex_float X[N_STFT][N_SENSOR]);
 #endif

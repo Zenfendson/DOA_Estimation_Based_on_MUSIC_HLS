@@ -1,4 +1,4 @@
-<project xmlns="com.autoesl.autopilot.project" top="music" name="MUSIC">
+<project xmlns="com.autoesl.autopilot.project" name="MUSIC" top="music">
     <files>
         <file name="src/music.cpp" sc="0" tb="false" cflags=""/>
         <file name="src/music.cpp" sc="0" tb="false" cflags=""/>
