@@ -1,9 +1,9 @@
 #ifndef __MUSIC_H__
 #define __MUSIC_H__
 
-#include "math.h"
 #include <iostream>
 #include <cstring>
+#include <cmath>
 
 #define FS 16000
 #define N_SENSOR 4
@@ -14,6 +14,8 @@
 #define N_STFT 50
 #define N_FREQ 960
 #define PIE 3.1415926
+
+using namespace std;
 
 struct complex {
 	float real;
@@ -28,4 +30,5 @@ void music(
 );
 
 void sort_eigval(float eigval[N_SENSOR], int sort_index[N_SENSOR]);
+
 #endif

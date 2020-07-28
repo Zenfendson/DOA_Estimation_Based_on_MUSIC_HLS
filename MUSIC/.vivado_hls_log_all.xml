@@ -3,6 +3,12 @@
   <errorLogs>
     <logs>
       <csimLog>
+        <logs message="ERROR: File doesn't exist or otherwise can't load file&#xD;&#xA;../test_audio/test_2_ch_1.wav&#xD;&#xA;|======================================|&#xD;&#xA;Num Channels: 1&#xD;&#xA;Num Samples Per Channel: 0&#xD;&#xA;Sample Rate: 44100&#xD;&#xA;Bit Depth: 16&#xD;&#xA;Length in Seconds: 0&#xD;&#xA;|======================================|" projectName="MUSIC" solutionName="solution1" date="2020-07-28T19:34:26.959+0800"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="MUSIC" solutionName="solution1" date="2020-07-28T19:32:44.170+0800"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="MUSIC" solutionName="solution1" date="2020-07-28T19:29:39.431+0800"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="MUSIC" solutionName="solution1" date="2020-07-28T19:27:32.085+0800"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="MUSIC" solutionName="solution1" date="2020-07-28T19:19:08.721+0800"/>
+        <logs message="ERROR: File doesn't exist or otherwise can't load file&#xD;&#xA;../test_audio/test_2_ch_1.wav&#xD;&#xA;|======================================|&#xD;&#xA;Num Channels: 1&#xD;&#xA;Num Samples Per Channel: 0&#xD;&#xA;Sample Rate: 44100&#xD;&#xA;Bit Depth: 16&#xD;&#xA;Length in Seconds: 0&#xD;&#xA;|======================================|" projectName="MUSIC" solutionName="solution1" date="2020-07-28T19:03:28.481+0800"/>
         <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="MUSIC" solutionName="solution1" date="2020-07-28T18:39:28.734+0800"/>
         <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="MUSIC" solutionName="solution1" date="2020-07-28T18:37:16.689+0800"/>
         <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="MUSIC" solutionName="solution1" date="2020-07-28T18:32:49.361+0800"/>

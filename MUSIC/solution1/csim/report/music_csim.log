@@ -2,9 +2,13 @@ INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
    Compiling ../../../../src/test.cpp in debug mode
    Generating csim.exe
-************MUSIC test**************
-************sort test***************
-eigval: 1.2, 3.2, 0.5, -0.7
-index: 3, 2, 0, 1
+******audio file read test**********
+|======================================|
+Num Channels: 1
+Num Samples Per Channel: 48000
+Sample Rate: 16000
+Bit Depth: 16
+Length in Seconds: 3
+|======================================|
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

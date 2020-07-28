@@ -1,1 +1,2 @@
-obj/test.o: ../../../../src/test.cpp ../../../../src/music.h
+obj/test.o: ../../../../src/test.cpp ../../../../src/music.h \
+ ../../../../src/AudioFile.h
