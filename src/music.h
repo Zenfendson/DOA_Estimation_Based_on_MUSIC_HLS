@@ -11,6 +11,7 @@ using namespace std;
 #define N_SAMPLE 48000
 #define N_STFT 50
 #define N_FREQ 960
+#define PIE 3.1415926
 
 void music(
 	float X[N_SAMPLE][N_SENSOR],	// input signal
