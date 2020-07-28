@@ -1,7 +1,9 @@
 #ifndef __MUSIC_H__
 #define __MUSIC_H__
 
-using namespace std;
+#include "math.h"
+#include <iostream>
+#include <cstring>
 
 #define FS 16000
 #define N_SENSOR 4
@@ -13,6 +15,11 @@ using namespace std;
 #define N_FREQ 960
 #define PIE 3.1415926
 
+struct complex {
+	float real;
+	float imag;
+};
+
 void music(
 	float X[N_SAMPLE][N_SENSOR],	// input signal
 	int DOA_src,					// DOA of source signal
@@ -20,4 +27,5 @@ void music(
 	float align_out					// Output aligned signal
 );
 
+void sort_eigval(float eigval[N_SENSOR], int sort_index[N_SENSOR]);
 #endif
