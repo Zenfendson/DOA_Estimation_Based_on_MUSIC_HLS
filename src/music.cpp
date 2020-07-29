@@ -126,15 +126,13 @@ void bit_reverse(float X_R[N_FREQ], float X_I[N_FREQ]) {
 		}
 	}
 }
-void fft(complex_float x[N_FREQ])
+void fft(float X_R[N_FREQ], float X_I[N_FREQ])
 {
-	cout << "fft input: " << endl;
+	cout << "fft input real: " << endl;
 	for(int i = 0; i < N_FREQ; i++) {
-		cout << x[i] << ",";
+		cout << X_R[i] << ",";
 	}
 	cout << endl;
-	float X_R[N_FREQ];
-	float X_I[N_FREQ];
 	float temp_R;		/*temporary storage complex variable*/
 	float temp_I;		/*temporary storage complex variable*/
 
@@ -149,10 +147,6 @@ void fft(complex_float x[N_FREQ])
 
 	int N2 = SIZE2;	/* N2=N>>1 */
 
-	for (i = 0; i < N_SENSOR; i++) {
-		X_R[i] = x[i].real();
-		X_I[i] = x[i].imag();
-	}
 	bit_reverse(X_R, X_I);
 
 	step=N2;
@@ -193,20 +187,16 @@ void fft(complex_float x[N_FREQ])
 		}
 		step=step/2;
 	}
-	for(i=0; i<N_FREQ; i++)
-	{
-		x[i] = {X_R[i], -X_I[i]};
-
-	}
-	cout << "fft output: " << endl;
+	cout << "fft output real: " << endl;
 	for(int i = 0; i < N_FREQ; i++) {
-		cout << x[i] << ",";
+		cout << X_R[i] << ",";
 	}
 	cout << endl;
 }
 void music(float X[N_SAMPLE][N_SENSOR], int DOA_src, int DOA_interfer) {
 	
-	complex_float FFT_Buffer[N_FREQ];
+	float FFT_Buffer_re[N_FREQ];
+	float FFT_Buffer_im[N_FREQ];
 	complex_float Xl_f[N_STFT][N_FREQ][N_SENSOR];
 	complex_float Xj_f[N_FREQ][N_STFT][N_SENSOR];
 	complex_float Autocorr_Buffer[N_STFT][N_SENSOR];
@@ -242,21 +232,22 @@ void music(float X[N_SAMPLE][N_SENSOR], int DOA_src, int DOA_interfer) {
 	for(int l = 0; l < N_STFT; l++) {
 		for(int n = 0; n < N_SENSOR; n++) {
 			for(int j = 0; j < N_FREQ; j++) {
-				FFT_Buffer[j] = {X[l*N_FREQ+j][n], 0};
+				FFT_Buffer_re[j] = X[l*N_FREQ+j][n];
+				FFT_Buffer_im[j] = 0;
 			}
 //			cout << "fft input: " << endl;
 //			for(int i = 0; i < N_FREQ; i++) {
 //				cout << FFT_Buffer[i] << ",";
 //			}
 //			cout << endl;
-			fft(FFT_Buffer);
+			fft(FFT_Buffer_re, FFT_Buffer_im);
 //			cout << "fft output: " << endl;
 //			for(int i = 0; i < N_FREQ; i++) {
 //				cout << FFT_Buffer[i] << ",";
 //			}
 //			cout << endl;
 			for(int j = 0; j< N_FREQ; j++) {
-				Xj_f[j][l][n] = FFT_Buffer[j];
+				Xj_f[j][l][n] = {FFT_Buffer_re[j], FFT_Buffer_im[j]};
 			}
 		}
 	}

@@ -52,7 +52,7 @@ void eig_decompose(
 );
 
 // fast fourier transform
-void fft(complex_float x[N_FREQ]);
+void fft(float X_R[N_FREQ], float X_I[N_FREQ]);
 
 void qr_decompose(
 		complex_float A[N_SENSOR][N_SENSOR],
