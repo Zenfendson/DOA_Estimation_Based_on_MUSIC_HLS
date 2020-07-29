@@ -64,4 +64,6 @@ unsigned int reverse_bits(unsigned int input);// used in FFT
 
 void bit_reverse(float X_R[N_FREQ], float X_I[N_FREQ]);//  used in FFT
 
+void Conjugate(float X_R[SIZE], float X_I[SIZE]);     // used in ifft
+void ifft(float X_R[SIZE], float X_I[SIZE]);
 #endif

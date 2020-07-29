@@ -193,6 +193,25 @@ void fft(float X_R[N_FREQ], float X_I[N_FREQ])
 	}
 	cout << endl;
 }
+
+void ifft(float X_R[SIZE], float X_I[SIZE]){
+	Conjugate(X_R,X_I);
+	fft(X_R,X_I);
+	Conjugate(X_R,X_I);
+	unsigned int i;
+	for(i=0; i < SIZE; i++){
+		X_R[i]=X_R[i]/SIZE;
+		X_I[i]=X_I[i]/SIZE;
+	}
+}
+
+void Conjugate(float X_R[SIZE], float X_I[SIZE]){
+	unsigned int i;
+	for(i=0; i < SIZE; i++){
+		X_I[i]=-X_I[i];
+	}
+}
+
 void music(float X[N_SAMPLE][N_SENSOR], int DOA_src, int DOA_interfer) {
 	
 	float FFT_Buffer_re[N_FREQ];
