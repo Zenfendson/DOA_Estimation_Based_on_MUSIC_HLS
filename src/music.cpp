@@ -1,5 +1,80 @@
 #include "music.h"
 
+void eig_decompose(complex_float Rx[N_SENSOR][N_SENSOR], complex_float U[N_SENSOR][N_SENSOR], float eigval[N_SENSOR]) {
+	complex_float Q_temp[N_SENSOR][N_SENSOR];
+	complex_float R_temp[N_SENSOR][N_SENSOR];
+	complex_float Rx_temp[N_SENSOR][N_SENSOR];
+	complex_float eig_mat[N_SENSOR][N_SENSOR];
+	complex_float temp;
+	complex_float mid, sum, midsum;
+
+	for(int i = 0; i < N_SENSOR; i++) {
+		for(int j = 0; j < N_SENSOR; j++) {
+			eig_mat[i][j] = Rx[i][j];
+		}
+	}
+	for(int i = 0; i < 30; i++) {
+		qr_decompose(eig_mat, Q_temp, R_temp);
+		for(int i = 0; i < N_SENSOR; i++) {
+			for(int j = 0; j < N_SENSOR; j++) {
+				temp.real() = 0;
+				temp.imag() = 0;
+				for (int k = 0; k < N_SENSOR; k++) {
+					temp += R_temp[i][k] * Q_temp[k][j];
+				}
+				eig_mat[i][j] = temp;
+			}
+		}
+	}
+	for(int i = 0; i < N_SENSOR; i++) {
+		eigval[i] = eig_mat[i][i].real();
+	}
+	for(int count = 0; count < N_SENSOR; count++) {
+		for(int i = 0; i < N_SENSOR; i++) {
+			for(int j = 0; j < N_SENSOR; j++) {
+				if (i == j) {
+					Rx_temp[i][j] = Rx[i][j] - eigval[count];
+				} else {
+					Rx_temp[i][j] = Rx[i][j];
+				}
+			}
+		}
+		for(int i = 0; i < N_SENSOR - 1; i++) {
+			mid = Rx_temp[i][i];
+			for(int j = i; j < N_SENSOR; j++) {
+				Rx_temp[i][j] /= mid;
+			}
+			for(int j = i + 1; j < N_SENSOR; j++) {
+				mid = Rx_temp[j][i];
+				for(int q = i; q < N_SENSOR; q++) {
+					Rx_temp[j][q] -= mid * Rx_temp[i][q];
+				}
+			}
+		}
+		midsum = U[N_SENSOR - 1][count] = 1;
+		for(int m = N_SENSOR - 2; m >=0; --m) {
+			sum = 0;
+			for(int j = m + 1; j < N_SENSOR; j++) {
+				sum += Rx_temp[m][j] * U[j][count];
+			}
+			sum = -sum / Rx_temp[m][m];
+			midsum += sum * x_conj(sum);
+			U[m][count] = sum;
+		}
+		midsum.real() = sqrt(midsum.real());
+		midsum.imag() = 0;
+		for(int i = 0; i < N_SENSOR; i++) {
+			U[i][count] /= midsum.real();
+		}
+	}
+}
+void qr_decompose(
+		complex_float A[N_SENSOR][N_SENSOR],
+		complex_float Q[N_SENSOR][N_SENSOR],
+		complex_float R[N_SENSOR][N_SENSOR])
+{
+	hls::qrf<false, N_SENSOR, N_SENSOR, complex_float, complex_float> (A, Q, R);
+}
 void sort_eigval(float eigval[N_SENSOR], int sort_index[N_SENSOR]) {
 	for (int i = 0; i < N_SENSOR; i++) {
 		sort_index[i] = i;
@@ -17,8 +92,6 @@ void sort_eigval(float eigval[N_SENSOR], int sort_index[N_SENSOR]) {
 		sort_index[i] = temp;
 	}
 }
-void eig(complex_float Rx[N_SENSOR][N_SENSOR], complex_float U[N_SENSOR][N_SENSOR], float eigval[N_SENSOR]);
-void fft(complex_float x[N_FREQ]);
 void Autocorrelation(complex_float Rx[N_SENSOR][N_SENSOR], complex_float X[N_STFT][N_SENSOR]) {
 	for (int x = 0; x < N_SENSOR; x++) {
 		for (int y = 0; y < N_SENSOR; y++) {
@@ -30,6 +103,14 @@ void Autocorrelation(complex_float Rx[N_SENSOR][N_SENSOR], complex_float X[N_STF
 		}
 	}
 }
+void inv(
+		complex_float A[N_SENSOR][N_SENSOR],
+		complex_float invA[N_SENSOR][N_SENSOR],
+		int& A_singular)
+{
+	hls::qr_inverse<N_SENSOR, complex_float, complex_float>(A, invA, A_singular);
+}
+void fft(complex_float x[N_FREQ]);
 void music(float X[N_SAMPLE][N_SENSOR], int DOA_src, int DOA_interfer, float align_out[N_SAMPLE]) {
 	
 	complex_float FFT_Buffer[N_FREQ];
@@ -81,8 +162,8 @@ void music(float X[N_SAMPLE][N_SENSOR], int DOA_src, int DOA_interfer, float ali
 				Autocorr_Buffer[l][n] = Xj_f[jj][jj][n];
 			}
 		}
-		Autocorrelation(Rx, Autocorr_Buffer);
-//		eig(Rx, U, eigval);
+		Autocorrelation(Autocorr_Buffer, Rx);
+		eig_decompose(Rx, U, eigval);
 		sort_eigval(eigval, sort_index);
 		for(int x = 0; x < N_SENSOR; x++) {
 			for(int y = 0; y < N_SENSOR; y++) {
