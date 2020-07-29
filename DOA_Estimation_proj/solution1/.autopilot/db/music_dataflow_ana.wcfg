@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="music.wdb" id="1">
+         <top_modules>
+            <top_module name="apa_music_top" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0ns"></ZoomStartTime>
+      <ZoomEndTime time="2000ns"></ZoomEndTime>
+      <Cursor1Time time="0ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="257"></NameColumnWidth>
+      <ValueColumnWidth column_width="84"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="2" />
+   <wvobject type="group" fp_name="HLS Process Summary Group">
+      <obj_property name="label">HLS Process Summary</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="group" fp_name="/apatb_music_top/AESL_inst_music//AESL_inst_music_activity">
+         <obj_property name="label">AESL_inst_music_activity</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="UseFullPath">true</obj_property>
+         <obj_property name="ElementShortName">AESL_inst_music_activity</obj_property>
+         <obj_property name="ObjectShortName">AESL_inst_music_activity</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+         <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">turquoise</obj_property>
+         <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+         <obj_property name="Render_Data">/apatb_music_top/AESL_inst_music//AESL_inst_music_activity.dataflowTxWaveData.Cycles</obj_property>
+         <obj_property name="Value_Data">/apatb_music_top/AESL_inst_music//AESL_inst_music_activity.dataflowTxWaveData.OutStanding</obj_property>
+         <obj_property name="Detail_Data">/apatb_music_top/AESL_inst_music//AESL_inst_music_activity.dataflowTxTooltipData</obj_property>
+         <wvobject type="group" fp_name="/apatb_music_top/AESL_inst_music/grp_eig_decompose_fu_1410/grp_eig_decompose_fu_1410_activity">
+            <obj_property name="label">grp_eig_decompose_fu_1410_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_eig_decompose_fu_1410_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_eig_decompose_fu_1410_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_music_top/AESL_inst_music/grp_eig_decompose_fu_1410/grp_eig_decompose_fu_1410_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_music_top/AESL_inst_music/grp_eig_decompose_fu_1410/grp_eig_decompose_fu_1410_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_music_top/AESL_inst_music/grp_eig_decompose_fu_1410/grp_eig_decompose_fu_1410_activity.dataflowTxTooltipData</obj_property>
+            <wvobject type="group" fp_name="/apatb_music_top/AESL_inst_music/grp_eig_decompose_fu_1410/grp_qrf_alt_fu_913/grp_qrf_alt_fu_913_activity">
+               <obj_property name="label">grp_qrf_alt_fu_913_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">grp_qrf_alt_fu_913_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_qrf_alt_fu_913_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_music_top/AESL_inst_music/grp_eig_decompose_fu_1410/grp_qrf_alt_fu_913/grp_qrf_alt_fu_913_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_music_top/AESL_inst_music/grp_eig_decompose_fu_1410/grp_qrf_alt_fu_913/grp_qrf_alt_fu_913_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_music_top/AESL_inst_music/grp_eig_decompose_fu_1410/grp_qrf_alt_fu_913/grp_qrf_alt_fu_913_activity.dataflowTxTooltipData</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_fft_fu_1430_activity">
+            <obj_property name="label">grp_fft_fu_1430_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_fft_fu_1430_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_fft_fu_1430_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_fft_fu_1430_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_fft_fu_1430_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_fft_fu_1430_activity.dataflowTxTooltipData</obj_property>
+            <wvobject type="group" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_258/grp_sin_or_cos_float_s_fu_258_activity">
+               <obj_property name="label">grp_sin_or_cos_float_s_fu_258_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">grp_sin_or_cos_float_s_fu_258_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_sin_or_cos_float_s_fu_258_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_258/grp_sin_or_cos_float_s_fu_258_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_258/grp_sin_or_cos_float_s_fu_258_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_258/grp_sin_or_cos_float_s_fu_258_activity.dataflowTxTooltipData</obj_property>
+               <wvobject type="group" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_258/grp_scaled_fixed2ieee_1_fu_218/grp_scaled_fixed2ieee_1_fu_218_activity">
+                  <obj_property name="label">grp_scaled_fixed2ieee_1_fu_218_activity</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <obj_property name="UseFullPath">true</obj_property>
+                  <obj_property name="ElementShortName">grp_scaled_fixed2ieee_1_fu_218_activity</obj_property>
+                  <obj_property name="ObjectShortName">grp_scaled_fixed2ieee_1_fu_218_activity</obj_property>
+                  <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+                  <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+                  <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+                  <obj_property name="UseCustomSignalColor">true</obj_property>
+                  <obj_property name="CustomSignalColor">turquoise</obj_property>
+                  <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+                  <obj_property name="Render_Data">/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_258/grp_scaled_fixed2ieee_1_fu_218/grp_scaled_fixed2ieee_1_fu_218_activity.dataflowTxWaveData.Cycles</obj_property>
+                  <obj_property name="Value_Data">/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_258/grp_scaled_fixed2ieee_1_fu_218/grp_scaled_fixed2ieee_1_fu_218_activity.dataflowTxWaveData.OutStanding</obj_property>
+                  <obj_property name="Detail_Data">/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_258/grp_scaled_fixed2ieee_1_fu_218/grp_scaled_fixed2ieee_1_fu_218_activity.dataflowTxTooltipData</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_274/grp_sin_or_cos_float_s_fu_274_activity">
+               <obj_property name="label">grp_sin_or_cos_float_s_fu_274_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">grp_sin_or_cos_float_s_fu_274_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_sin_or_cos_float_s_fu_274_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_274/grp_sin_or_cos_float_s_fu_274_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_274/grp_sin_or_cos_float_s_fu_274_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_274/grp_sin_or_cos_float_s_fu_274_activity.dataflowTxTooltipData</obj_property>
+               <wvobject type="group" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_274/grp_scaled_fixed2ieee_1_fu_218/grp_scaled_fixed2ieee_1_fu_218_activity">
+                  <obj_property name="label">grp_scaled_fixed2ieee_1_fu_218_activity</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <obj_property name="UseFullPath">true</obj_property>
+                  <obj_property name="ElementShortName">grp_scaled_fixed2ieee_1_fu_218_activity</obj_property>
+                  <obj_property name="ObjectShortName">grp_scaled_fixed2ieee_1_fu_218_activity</obj_property>
+                  <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+                  <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+                  <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+                  <obj_property name="UseCustomSignalColor">true</obj_property>
+                  <obj_property name="CustomSignalColor">turquoise</obj_property>
+                  <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+                  <obj_property name="Render_Data">/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_274/grp_scaled_fixed2ieee_1_fu_218/grp_scaled_fixed2ieee_1_fu_218_activity.dataflowTxWaveData.Cycles</obj_property>
+                  <obj_property name="Value_Data">/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_274/grp_scaled_fixed2ieee_1_fu_218/grp_scaled_fixed2ieee_1_fu_218_activity.dataflowTxWaveData.OutStanding</obj_property>
+                  <obj_property name="Detail_Data">/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_274/grp_scaled_fixed2ieee_1_fu_218/grp_scaled_fixed2ieee_1_fu_218_activity.dataflowTxTooltipData</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_bit_reverse_fu_290/grp_bit_reverse_fu_290_activity">
+               <obj_property name="label">grp_bit_reverse_fu_290_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">grp_bit_reverse_fu_290_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_bit_reverse_fu_290_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_bit_reverse_fu_290/grp_bit_reverse_fu_290_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_bit_reverse_fu_290/grp_bit_reverse_fu_290_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_bit_reverse_fu_290/grp_bit_reverse_fu_290_activity.dataflowTxTooltipData</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1444/grp_sin_or_cos_double_s_fu_1444_activity">
+            <obj_property name="label">grp_sin_or_cos_double_s_fu_1444_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_sin_or_cos_double_s_fu_1444_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_sin_or_cos_double_s_fu_1444_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1444/grp_sin_or_cos_double_s_fu_1444_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1444/grp_sin_or_cos_double_s_fu_1444_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1444/grp_sin_or_cos_double_s_fu_1444_activity.dataflowTxTooltipData</obj_property>
+            <wvobject type="group" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1444/grp_scaled_fixed2ieee_fu_268/grp_scaled_fixed2ieee_fu_268_activity">
+               <obj_property name="label">grp_scaled_fixed2ieee_fu_268_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">grp_scaled_fixed2ieee_fu_268_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_scaled_fixed2ieee_fu_268_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1444/grp_scaled_fixed2ieee_fu_268/grp_scaled_fixed2ieee_fu_268_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1444/grp_scaled_fixed2ieee_fu_268/grp_scaled_fixed2ieee_fu_268_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1444/grp_scaled_fixed2ieee_fu_268/grp_scaled_fixed2ieee_fu_268_activity.dataflowTxTooltipData</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1464/grp_sin_or_cos_double_s_fu_1464_activity">
+            <obj_property name="label">grp_sin_or_cos_double_s_fu_1464_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_sin_or_cos_double_s_fu_1464_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_sin_or_cos_double_s_fu_1464_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1464/grp_sin_or_cos_double_s_fu_1464_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1464/grp_sin_or_cos_double_s_fu_1464_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1464/grp_sin_or_cos_double_s_fu_1464_activity.dataflowTxTooltipData</obj_property>
+            <wvobject type="group" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1464/grp_scaled_fixed2ieee_fu_268/grp_scaled_fixed2ieee_fu_268_activity">
+               <obj_property name="label">grp_scaled_fixed2ieee_fu_268_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">grp_scaled_fixed2ieee_fu_268_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_scaled_fixed2ieee_fu_268_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1464/grp_scaled_fixed2ieee_fu_268/grp_scaled_fixed2ieee_fu_268_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1464/grp_scaled_fixed2ieee_fu_268/grp_scaled_fixed2ieee_fu_268_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1464/grp_scaled_fixed2ieee_fu_268/grp_scaled_fixed2ieee_fu_268_activity.dataflowTxTooltipData</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_music_top/AESL_inst_music/grp_Autocorrelation_fu_1483/grp_Autocorrelation_fu_1483_activity">
+            <obj_property name="label">grp_Autocorrelation_fu_1483_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_Autocorrelation_fu_1483_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_Autocorrelation_fu_1483_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_music_top/AESL_inst_music/grp_Autocorrelation_fu_1483/grp_Autocorrelation_fu_1483_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_music_top/AESL_inst_music/grp_Autocorrelation_fu_1483/grp_Autocorrelation_fu_1483_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_music_top/AESL_inst_music/grp_Autocorrelation_fu_1483/grp_Autocorrelation_fu_1483_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_music_top/AESL_inst_music/grp_sort_eigval_fu_1491/grp_sort_eigval_fu_1491_activity">
+            <obj_property name="label">grp_sort_eigval_fu_1491_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_sort_eigval_fu_1491_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_sort_eigval_fu_1491_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_music_top/AESL_inst_music/grp_sort_eigval_fu_1491/grp_sort_eigval_fu_1491_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_music_top/AESL_inst_music/grp_sort_eigval_fu_1491/grp_sort_eigval_fu_1491_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_music_top/AESL_inst_music/grp_sort_eigval_fu_1491/grp_sort_eigval_fu_1491_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/apatb_music_top/AESL_inst_music//AESL_inst_music_activity">
+      <obj_property name="ElementShortName">AESL_inst_music_activity</obj_property>
+      <obj_property name="ObjectShortName">AESL_inst_music_activity</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="AESL_inst_music_group">
+      <obj_property name="label">AESL_inst_music</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="protoinst" fp_name="/apatb_music_top/AESL_inst_music/grp_eig_decompose_fu_1410/grp_eig_decompose_fu_1410_activity">
+         <obj_property name="ElementShortName">grp_eig_decompose_fu_1410_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_eig_decompose_fu_1410_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_fft_fu_1430_activity">
+         <obj_property name="ElementShortName">grp_fft_fu_1430_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_fft_fu_1430_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1444/grp_sin_or_cos_double_s_fu_1444_activity">
+         <obj_property name="ElementShortName">grp_sin_or_cos_double_s_fu_1444_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_sin_or_cos_double_s_fu_1444_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1464/grp_sin_or_cos_double_s_fu_1464_activity">
+         <obj_property name="ElementShortName">grp_sin_or_cos_double_s_fu_1464_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_sin_or_cos_double_s_fu_1464_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_music_top/AESL_inst_music/grp_Autocorrelation_fu_1483/grp_Autocorrelation_fu_1483_activity">
+         <obj_property name="ElementShortName">grp_Autocorrelation_fu_1483_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_Autocorrelation_fu_1483_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_music_top/AESL_inst_music/grp_sort_eigval_fu_1491/grp_sort_eigval_fu_1491_activity">
+         <obj_property name="ElementShortName">grp_sort_eigval_fu_1491_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_sort_eigval_fu_1491_activity</obj_property>
+      </wvobject>
+      <wvobject type="group" fp_name="AESL_inst_music_Handshake_group">
+         <obj_property name="label">Block-level handshake</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/ap_start">
+            <obj_property name="ElementShortName">ap_start</obj_property>
+            <obj_property name="ObjectShortName">ap_start</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/ap_ready">
+            <obj_property name="ElementShortName">ap_ready</obj_property>
+            <obj_property name="ObjectShortName">ap_ready</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/ap_done">
+            <obj_property name="ElementShortName">ap_done</obj_property>
+            <obj_property name="ObjectShortName">ap_done</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_eig_decompose_fu_1410_group">
+         <obj_property name="label">grp_eig_decompose_fu_1410</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="protoinst" fp_name="/apatb_music_top/AESL_inst_music/grp_eig_decompose_fu_1410/grp_qrf_alt_fu_913/grp_qrf_alt_fu_913_activity">
+            <obj_property name="ElementShortName">grp_qrf_alt_fu_913_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_qrf_alt_fu_913_activity</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_eig_decompose_fu_1410_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_eig_decompose_fu_1410/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_eig_decompose_fu_1410/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_eig_decompose_fu_1410/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_qrf_alt_fu_913_group">
+            <obj_property name="label">grp_qrf_alt_fu_913</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="grp_qrf_alt_fu_913_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_eig_decompose_fu_1410/grp_qrf_alt_fu_913/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_eig_decompose_fu_1410/grp_qrf_alt_fu_913/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_eig_decompose_fu_1410/grp_qrf_alt_fu_913/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_fft_fu_1430_group">
+         <obj_property name="label">grp_fft_fu_1430</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="protoinst" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_258/grp_sin_or_cos_float_s_fu_258_activity">
+            <obj_property name="ElementShortName">grp_sin_or_cos_float_s_fu_258_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_sin_or_cos_float_s_fu_258_activity</obj_property>
+         </wvobject>
+         <wvobject type="protoinst" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_274/grp_sin_or_cos_float_s_fu_274_activity">
+            <obj_property name="ElementShortName">grp_sin_or_cos_float_s_fu_274_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_sin_or_cos_float_s_fu_274_activity</obj_property>
+         </wvobject>
+         <wvobject type="protoinst" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_bit_reverse_fu_290/grp_bit_reverse_fu_290_activity">
+            <obj_property name="ElementShortName">grp_bit_reverse_fu_290_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_bit_reverse_fu_290_activity</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_fft_fu_1430_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_sin_or_cos_float_s_fu_258_group">
+            <obj_property name="label">grp_sin_or_cos_float_s_fu_258</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="protoinst" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_258/grp_scaled_fixed2ieee_1_fu_218/grp_scaled_fixed2ieee_1_fu_218_activity">
+               <obj_property name="ElementShortName">grp_scaled_fixed2ieee_1_fu_218_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_scaled_fixed2ieee_1_fu_218_activity</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="grp_sin_or_cos_float_s_fu_258_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_258/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_258/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_258/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="grp_scaled_fixed2ieee_1_fu_218_group">
+               <obj_property name="label">grp_scaled_fixed2ieee_1_fu_218</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="grp_scaled_fixed2ieee_1_fu_218_Handshake_group">
+                  <obj_property name="label">Block-level handshake</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_258/grp_scaled_fixed2ieee_1_fu_218/ap_start">
+                     <obj_property name="ElementShortName">ap_start</obj_property>
+                     <obj_property name="ObjectShortName">ap_start</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_258/grp_scaled_fixed2ieee_1_fu_218/ap_ready">
+                     <obj_property name="ElementShortName">ap_ready</obj_property>
+                     <obj_property name="ObjectShortName">ap_ready</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_258/grp_scaled_fixed2ieee_1_fu_218/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_sin_or_cos_float_s_fu_274_group">
+            <obj_property name="label">grp_sin_or_cos_float_s_fu_274</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="protoinst" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_274/grp_scaled_fixed2ieee_1_fu_218/grp_scaled_fixed2ieee_1_fu_218_activity">
+               <obj_property name="ElementShortName">grp_scaled_fixed2ieee_1_fu_218_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_scaled_fixed2ieee_1_fu_218_activity</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="grp_sin_or_cos_float_s_fu_274_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_274/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_274/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_274/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="grp_scaled_fixed2ieee_1_fu_218_group">
+               <obj_property name="label">grp_scaled_fixed2ieee_1_fu_218</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="grp_scaled_fixed2ieee_1_fu_218_Handshake_group">
+                  <obj_property name="label">Block-level handshake</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_274/grp_scaled_fixed2ieee_1_fu_218/ap_start">
+                     <obj_property name="ElementShortName">ap_start</obj_property>
+                     <obj_property name="ObjectShortName">ap_start</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_274/grp_scaled_fixed2ieee_1_fu_218/ap_ready">
+                     <obj_property name="ElementShortName">ap_ready</obj_property>
+                     <obj_property name="ObjectShortName">ap_ready</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_sin_or_cos_float_s_fu_274/grp_scaled_fixed2ieee_1_fu_218/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_bit_reverse_fu_290_group">
+            <obj_property name="label">grp_bit_reverse_fu_290</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="grp_bit_reverse_fu_290_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_bit_reverse_fu_290/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_bit_reverse_fu_290/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_fft_fu_1430/grp_bit_reverse_fu_290/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_sin_or_cos_double_s_fu_1444_group">
+         <obj_property name="label">grp_sin_or_cos_double_s_fu_1444</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="protoinst" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1444/grp_scaled_fixed2ieee_fu_268/grp_scaled_fixed2ieee_fu_268_activity">
+            <obj_property name="ElementShortName">grp_scaled_fixed2ieee_fu_268_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_scaled_fixed2ieee_fu_268_activity</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_sin_or_cos_double_s_fu_1444_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1444/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1444/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1444/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_scaled_fixed2ieee_fu_268_group">
+            <obj_property name="label">grp_scaled_fixed2ieee_fu_268</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="grp_scaled_fixed2ieee_fu_268_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1444/grp_scaled_fixed2ieee_fu_268/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1444/grp_scaled_fixed2ieee_fu_268/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1444/grp_scaled_fixed2ieee_fu_268/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_sin_or_cos_double_s_fu_1464_group">
+         <obj_property name="label">grp_sin_or_cos_double_s_fu_1464</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="protoinst" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1464/grp_scaled_fixed2ieee_fu_268/grp_scaled_fixed2ieee_fu_268_activity">
+            <obj_property name="ElementShortName">grp_scaled_fixed2ieee_fu_268_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_scaled_fixed2ieee_fu_268_activity</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_sin_or_cos_double_s_fu_1464_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1464/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1464/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1464/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_scaled_fixed2ieee_fu_268_group">
+            <obj_property name="label">grp_scaled_fixed2ieee_fu_268</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="grp_scaled_fixed2ieee_fu_268_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1464/grp_scaled_fixed2ieee_fu_268/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1464/grp_scaled_fixed2ieee_fu_268/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_sin_or_cos_double_s_fu_1464/grp_scaled_fixed2ieee_fu_268/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_Autocorrelation_fu_1483_group">
+         <obj_property name="label">grp_Autocorrelation_fu_1483</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_Autocorrelation_fu_1483_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_Autocorrelation_fu_1483/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_Autocorrelation_fu_1483/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_Autocorrelation_fu_1483/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_sort_eigval_fu_1491_group">
+         <obj_property name="label">grp_sort_eigval_fu_1491</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_sort_eigval_fu_1491_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_sort_eigval_fu_1491/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_sort_eigval_fu_1491/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_music_top/AESL_inst_music/grp_sort_eigval_fu_1491/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+</wave_config>

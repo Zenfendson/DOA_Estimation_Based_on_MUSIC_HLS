@@ -1,0 +1,69 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'eig_decompose'" level="0">
+<item name = "Date">Wed Jul 29 20:31:15 2020
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">DOA_Estimation_proj</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 9.195, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">53241, 61317, 53241, 61317, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_qrf_alt_fu_913">qrf_alt, 684, 854, 684, 854, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">19, 19, 5, -, -, 4, no</column>
+<column name=" + Loop 1.1">3, 3, 1, -, -, 4, no</column>
+<column name="- Loop 2">19, 19, 5, -, -, 4, no</column>
+<column name=" + Loop 2.1">3, 3, 1, -, -, 4, no</column>
+<column name="- Loop 3">19, 19, 5, -, -, 4, no</column>
+<column name=" + Loop 3.1">3, 3, 1, -, -, 4, no</column>
+<column name="- Loop 4">19, 19, 5, -, -, 4, no</column>
+<column name=" + Loop 4.1">3, 3, 1, -, -, 4, no</column>
+<column name="- Loop 5">40, 40, 10, -, -, 4, no</column>
+<column name=" + Loop 5.1">8, 8, 2, -, -, 4, no</column>
+<column name="- Loop 6">50610, 55710, 1687 ~ 1857, -, -, 30, no</column>
+<column name=" + Loop 6.1">1000, 1000, 250, -, -, 4, no</column>
+<column name="  ++ Loop 6.1.1">248, 248, 62, -, -, 4, no</column>
+<column name="   +++ Loop 6.1.1.1">60, 60, 15, -, -, 4, no</column>
+<column name="- Loop 7">2508, 5484, 627 ~ 1371, -, -, 4, no</column>
+<column name=" + Loop 7.1">32, 32, 8, -, -, 4, no</column>
+<column name=" + Loop 7.2">297, 951, 99 ~ 317, -, -, 3, no</column>
+<column name="  ++ Loop 7.2.1">52, 104, 26, -, -, 2 ~ 4, no</column>
+<column name="  ++ Loop 7.2.2">35, 201, 35 ~ 67, -, -, 1 ~ 3, no</column>
+<column name="   +++ Loop 7.2.2.1">32, 64, 16, -, -, 2 ~ 4, no</column>
+<column name=" + Loop 7.3">168, 258, 56 ~ 86, -, -, 3, no</column>
+<column name="  ++ Loop 7.3.1">15, 45, 15, -, -, 1 ~ 3, no</column>
+<column name=" + Loop 7.4">104, 104, 26, -, -, 4, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

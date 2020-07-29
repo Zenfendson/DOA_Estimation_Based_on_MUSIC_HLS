@@ -1,0 +1,213 @@
+
+
+================================================================
+== Vivado HLS Report for 'Autocorrelation'
+================================================================
+* Date:           Wed Jul 29 20:31:29 2020
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        DOA_Estimation_proj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.397|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  2985|  2985|  2985|  2985|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+------+------+----------+-----------+-----------+------+----------+
+        |                 |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name    |  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1         |  2984|  2984|       746|          -|          -|     4|    no    |
+        | + Loop 1.1      |   744|   744|       186|          -|          -|     4|    no    |
+        |  ++ Loop 1.1.1  |   160|   160|        16|          -|          -|    10|    no    |
+        +-----------------+------+------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|    142|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|     16|    2504|   4052|    -|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|    448|    -|
+|Register         |        -|      -|     464|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        0|     16|    2968|   4642|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      280|    220|  106400|  53200|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        0|      7|       2|      8|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+    |         Instance         |        Module        | BRAM_18K| DSP48E|  FF | LUT | URAM|
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+    |music_faddfsub_32ibs_U40  |music_faddfsub_32ibs  |        0|      2|  205|  390|    0|
+    |music_faddfsub_32ibs_U41  |music_faddfsub_32ibs  |        0|      2|  205|  390|    0|
+    |music_fdiv_32ns_3ncg_U46  |music_fdiv_32ns_3ncg  |        0|      0|  761|  994|    0|
+    |music_fdiv_32ns_3ncg_U47  |music_fdiv_32ns_3ncg  |        0|      0|  761|  994|    0|
+    |music_fmul_32ns_3jbC_U42  |music_fmul_32ns_3jbC  |        0|      3|  143|  321|    0|
+    |music_fmul_32ns_3jbC_U43  |music_fmul_32ns_3jbC  |        0|      3|  143|  321|    0|
+    |music_fmul_32ns_3jbC_U44  |music_fmul_32ns_3jbC  |        0|      3|  143|  321|    0|
+    |music_fmul_32ns_3jbC_U45  |music_fmul_32ns_3jbC  |        0|      3|  143|  321|    0|
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+    |Total                     |                      |        0|     16| 2504| 4052|    0|
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------+----------+-------+---+----+------------+------------+
+    |     Variable Name    | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------+----------+-------+---+----+------------+------------+
+    |add_ln94_1_fu_345_p2  |     +    |      0|  0|  15|           7|           7|
+    |add_ln94_fu_334_p2    |     +    |      0|  0|  15|           7|           7|
+    |add_ln96_fu_299_p2    |     +    |      0|  0|  15|           6|           6|
+    |l_fu_316_p2           |     +    |      0|  0|  13|           4|           1|
+    |x_fu_257_p2           |     +    |      0|  0|  12|           3|           1|
+    |y_fu_285_p2           |     +    |      0|  0|  12|           3|           1|
+    |icmp_ln90_fu_251_p2   |   icmp   |      0|  0|   9|           3|           4|
+    |icmp_ln91_fu_279_p2   |   icmp   |      0|  0|   9|           3|           4|
+    |icmp_ln93_fu_310_p2   |   icmp   |      0|  0|   9|           4|           4|
+    |xor_ln667_fu_359_p2   |    xor   |      0|  0|  33|          32|          33|
+    +----------------------+----------+-------+---+----+------------+------------+
+    |Total                 |          |      0|  0| 142|          72|          68|
+    +----------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------+-----+-----------+-----+-----------+
+    |        Name        | LUT | Input Size| Bits| Total Bits|
+    +--------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm           |  193|         44|    1|         44|
+    |grp_fu_173_opcode   |   15|          3|    2|          6|
+    |grp_fu_173_p0       |   15|          3|   32|         96|
+    |grp_fu_173_p1       |   15|          3|   32|         96|
+    |grp_fu_177_opcode   |   15|          3|    2|          6|
+    |grp_fu_177_p0       |   15|          3|   32|         96|
+    |grp_fu_177_p1       |   15|          3|   32|         96|
+    |grp_fu_183_p0       |   15|          3|   32|         96|
+    |grp_fu_183_p1       |   15|          3|   32|         96|
+    |grp_fu_189_p0       |   15|          3|   32|         96|
+    |grp_fu_189_p1       |   15|          3|   32|         96|
+    |grp_fu_195_p0       |   15|          3|   32|         96|
+    |grp_fu_195_p1       |   15|          3|   32|         96|
+    |grp_fu_201_p0       |   15|          3|   32|         96|
+    |grp_fu_201_p1       |   15|          3|   32|         96|
+    |l_0_reg_162         |    9|          2|    4|          8|
+    |p_r_M_imag_reg_138  |    9|          2|   32|         64|
+    |p_r_M_real_reg_150  |    9|          2|   32|         64|
+    |x_0_reg_116         |    9|          2|    3|          6|
+    |y_0_reg_127         |    9|          2|    3|          6|
+    +--------------------+-----+-----------+-----+-----------+
+    |Total               |  448|         96|  463|       1356|
+    +--------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------+----+----+-----+-----------+
+    |           Name           | FF | LUT| Bits| Const Bits|
+    +--------------------------+----+----+-----+-----------+
+    |Rx_M_imag_addr_reg_407    |   4|   0|    4|          0|
+    |Rx_M_real_addr11_reg_402  |   4|   0|    4|          0|
+    |X_M_imag_load_reg_446     |  32|   0|   32|          0|
+    |ap_CS_fsm                 |  43|   0|   43|          0|
+    |l_0_reg_162               |   4|   0|    4|          0|
+    |l_reg_415                 |   4|   0|    4|          0|
+    |p_r_M_imag_16_reg_457     |  32|   0|   32|          0|
+    |p_r_M_imag_reg_138        |  32|   0|   32|          0|
+    |p_r_M_real_17_reg_451     |  32|   0|   32|          0|
+    |p_r_M_real_reg_150        |  32|   0|   32|          0|
+    |p_t_real_reg_440          |  32|   0|   32|          0|
+    |reg_219                   |  32|   0|   32|          0|
+    |reg_224                   |  32|   0|   32|          0|
+    |reg_229                   |  32|   0|   32|          0|
+    |reg_234                   |  32|   0|   32|          0|
+    |reg_239                   |  32|   0|   32|          0|
+    |reg_245                   |  32|   0|   32|          0|
+    |x_0_reg_116               |   3|   0|    3|          0|
+    |x_reg_374                 |   3|   0|    3|          0|
+    |y_0_reg_127               |   3|   0|    3|          0|
+    |y_reg_392                 |   3|   0|    3|          0|
+    |zext_ln91_reg_384         |   3|   0|    6|          3|
+    |zext_ln96_1_reg_397       |   3|   0|    7|          4|
+    |zext_ln96_reg_379         |   3|   0|    7|          4|
+    +--------------------------+----+----+-----+-----------+
+    |Total                     | 464|   0|  475|         11|
+    +--------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------+-----+-----+------------+-----------------+--------------+
+|      RTL Ports     | Dir | Bits|  Protocol  |  Source Object  |    C Type    |
++--------------------+-----+-----+------------+-----------------+--------------+
+|ap_clk              |  in |    1| ap_ctrl_hs | Autocorrelation | return value |
+|ap_rst              |  in |    1| ap_ctrl_hs | Autocorrelation | return value |
+|ap_start            |  in |    1| ap_ctrl_hs | Autocorrelation | return value |
+|ap_done             | out |    1| ap_ctrl_hs | Autocorrelation | return value |
+|ap_idle             | out |    1| ap_ctrl_hs | Autocorrelation | return value |
+|ap_ready            | out |    1| ap_ctrl_hs | Autocorrelation | return value |
+|X_M_real_address0   | out |    6|  ap_memory |     X_M_real    |     array    |
+|X_M_real_ce0        | out |    1|  ap_memory |     X_M_real    |     array    |
+|X_M_real_q0         |  in |   32|  ap_memory |     X_M_real    |     array    |
+|X_M_real_address1   | out |    6|  ap_memory |     X_M_real    |     array    |
+|X_M_real_ce1        | out |    1|  ap_memory |     X_M_real    |     array    |
+|X_M_real_q1         |  in |   32|  ap_memory |     X_M_real    |     array    |
+|X_M_imag_address0   | out |    6|  ap_memory |     X_M_imag    |     array    |
+|X_M_imag_ce0        | out |    1|  ap_memory |     X_M_imag    |     array    |
+|X_M_imag_q0         |  in |   32|  ap_memory |     X_M_imag    |     array    |
+|X_M_imag_address1   | out |    6|  ap_memory |     X_M_imag    |     array    |
+|X_M_imag_ce1        | out |    1|  ap_memory |     X_M_imag    |     array    |
+|X_M_imag_q1         |  in |   32|  ap_memory |     X_M_imag    |     array    |
+|Rx_M_real_address0  | out |    4|  ap_memory |    Rx_M_real    |     array    |
+|Rx_M_real_ce0       | out |    1|  ap_memory |    Rx_M_real    |     array    |
+|Rx_M_real_we0       | out |    1|  ap_memory |    Rx_M_real    |     array    |
+|Rx_M_real_d0        | out |   32|  ap_memory |    Rx_M_real    |     array    |
+|Rx_M_imag_address0  | out |    4|  ap_memory |    Rx_M_imag    |     array    |
+|Rx_M_imag_ce0       | out |    1|  ap_memory |    Rx_M_imag    |     array    |
+|Rx_M_imag_we0       | out |    1|  ap_memory |    Rx_M_imag    |     array    |
+|Rx_M_imag_d0        | out |   32|  ap_memory |    Rx_M_imag    |     array    |
++--------------------+-----+-----+------------+-----------------+--------------+
+

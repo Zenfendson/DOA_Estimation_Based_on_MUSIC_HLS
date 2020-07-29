@@ -1,0 +1,302 @@
+
+
+================================================================
+== Vivado HLS Report for 'scaled_fixed2ieee'
+================================================================
+* Date:           Wed Jul 29 20:31:18 2020
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        DOA_Estimation_proj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     7.537|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   19|   27|   19|   27|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+-------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  |  Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count | Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+-------+----------+
+        |- Loop 1  |    9|    9|         3|          -|          -|      3|    no    |
+        |- Loop 2  |    4|    4|         1|          -|          -|      4|    no    |
+        |- Loop 3  |    2|    9|         2|          -|          -| 1 ~ 4 |    no    |
+        +----------+-----+-----+----------+-----------+-----------+-------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 8
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 5 
+3 --> 4 
+4 --> 2 
+5 --> 5 6 
+6 --> 7 
+7 --> 6 8 
+8 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%out_bits_2_V = alloca i32"   --->   Operation 9 'alloca' 'out_bits_2_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%out_bits_2_V_1 = alloca i32"   --->   Operation 10 'alloca' 'out_bits_2_V_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%out_bits_2_V_2 = alloca i32"   --->   Operation 11 'alloca' 'out_bits_2_V_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%prescale_read = call i12 @_ssdm_op_Read.ap_auto.i12(i12 %prescale)" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:411]   --->   Operation 12 'read' 'prescale_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%in_V_read = call i63 @_ssdm_op_Read.ap_auto.i63(i63 %in_V)" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:411]   --->   Operation 13 'read' 'in_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (1.76ns)   --->   "br label %.preheader" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:423]   --->   Operation 14 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 3.65>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%i_0 = phi i2 [ 0, %.preheader.preheader ], [ %i, %.preheader.backedge ]"   --->   Operation 15 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%out_bits_2_V_load = load i32* %out_bits_2_V"   --->   Operation 16 'load' 'out_bits_2_V_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%out_bits_2_V_1_load = load i32* %out_bits_2_V_1"   --->   Operation 17 'load' 'out_bits_2_V_1_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%out_bits_2_V_2_load = load i32* %out_bits_2_V_2"   --->   Operation 18 'load' 'out_bits_2_V_2_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.95ns)   --->   "%icmp_ln423 = icmp eq i2 %i_0, -1" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:423]   --->   Operation 19 'icmp' 'icmp_ln423' <Predicate = true> <Delay = 0.95> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 3, i64 3, i64 3)"   --->   Operation 20 'speclooptripcount' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (1.56ns)   --->   "%i = add i2 %i_0, 1" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:423]   --->   Operation 21 'add' 'i' <Predicate = true> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "br i1 %icmp_ln423, label %1, label %0" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:423]   --->   Operation 22 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%shl_ln = call i6 @_ssdm_op_BitConcatenate.i6.i2.i4(i2 %i_0, i4 0)" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:424]   --->   Operation 23 'bitconcatenate' 'shl_ln' <Predicate = (!icmp_ln423)> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (1.82ns)   --->   "%sub_ln424 = sub i6 -2, %shl_ln" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:424]   --->   Operation 24 'sub' 'sub_ln424' <Predicate = (!icmp_ln423)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 25 [1/1] (1.82ns)   --->   "%sub_ln425 = sub i6 -17, %shl_ln" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 25 'sub' 'sub_ln425' <Predicate = (!icmp_ln423)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 26 [1/1] (1.42ns)   --->   "%icmp_ln566 = icmp ugt i6 %sub_ln425, %sub_ln424" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 26 'icmp' 'icmp_ln566' <Predicate = (!icmp_ln423)> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 27 [1/1] (1.82ns)   --->   "%sub_ln566_1 = sub i6 -2, %sub_ln425" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 27 'sub' 'sub_ln566_1' <Predicate = (!icmp_ln423)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%c_3 = alloca i32"   --->   Operation 28 'alloca' 'c_3' <Predicate = (icmp_ln423)> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%c_3_1 = alloca i32"   --->   Operation 29 'alloca' 'c_3_1' <Predicate = (icmp_ln423)> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%c_3_2 = alloca i32"   --->   Operation 30 'alloca' 'c_3_2' <Predicate = (icmp_ln423)> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%c_3_3 = alloca i32"   --->   Operation 31 'alloca' 'c_3_3' <Predicate = (icmp_ln423)> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%trunc_ln566 = trunc i63 %in_V_read to i15" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:429]   --->   Operation 32 'trunc' 'trunc_ln566' <Predicate = (icmp_ln423)> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%tmp_6 = call i16 @_ssdm_op_BitConcatenate.i16.i15.i1(i15 %trunc_ln566, i1 true)" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:430]   --->   Operation 33 'bitconcatenate' 'tmp_6' <Predicate = (icmp_ln423)> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%p_Result_45 = call i32 @_ssdm_op_PartSet.i32.i32.i16.i32.i32(i32 undef, i16 %tmp_6, i32 16, i32 31)" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:430]   --->   Operation 34 'partset' 'p_Result_45' <Predicate = (icmp_ln423)> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (1.76ns)   --->   "br label %branch8" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:434]   --->   Operation 35 'br' <Predicate = (icmp_ln423)> <Delay = 1.76>
+
+State 3 <SV = 2> <Delay = 7.53>
+ST_3 : Operation 36 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln566)   --->   "%tmp = call i63 @llvm.part.select.i63(i63 %in_V_read, i32 62, i32 0)" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 36 'partselect' 'tmp' <Predicate = (icmp_ln566)> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (1.82ns)   --->   "%sub_ln566 = sub i6 %sub_ln425, %sub_ln424" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 37 'sub' 'sub_ln566' <Predicate = (icmp_ln566)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 38 [1/1] (1.82ns)   --->   "%sub_ln566_2 = sub i6 %sub_ln424, %sub_ln425" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 38 'sub' 'sub_ln566_2' <Predicate = (!icmp_ln566)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 39 [1/1] (0.00ns) (grouped into LUT with out node sub_ln566_3)   --->   "%select_ln566 = select i1 %icmp_ln566, i6 %sub_ln566, i6 %sub_ln566_2" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 39 'select' 'select_ln566' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 40 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln566)   --->   "%select_ln566_1 = select i1 %icmp_ln566, i63 %tmp, i63 %in_V_read" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 40 'select' 'select_ln566_1' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 41 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln566)   --->   "%select_ln566_2 = select i1 %icmp_ln566, i6 %sub_ln566_1, i6 %sub_ln425" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 41 'select' 'select_ln566_2' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 42 [1/1] (1.82ns) (out node of the LUT)   --->   "%sub_ln566_3 = sub i6 -2, %select_ln566" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 42 'sub' 'sub_ln566_3' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 43 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln566)   --->   "%zext_ln566 = zext i6 %select_ln566_2 to i63" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 43 'zext' 'zext_ln566' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (0.00ns) (grouped into LUT with out node p_Result_s)   --->   "%zext_ln566_1 = zext i6 %sub_ln566_3 to i63" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 44 'zext' 'zext_ln566_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 45 [1/1] (4.59ns) (out node of the LUT)   --->   "%lshr_ln566 = lshr i63 %select_ln566_1, %zext_ln566" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 45 'lshr' 'lshr_ln566' <Predicate = true> <Delay = 4.59> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 4.59> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 46 [1/1] (0.00ns) (grouped into LUT with out node p_Result_s)   --->   "%lshr_ln566_1 = lshr i63 -1, %zext_ln566_1" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 46 'lshr' 'lshr_ln566_1' <Predicate = true> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 4.59> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 47 [1/1] (2.94ns) (out node of the LUT)   --->   "%p_Result_s = and i63 %lshr_ln566, %lshr_ln566_1" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 47 'and' 'p_Result_s' <Predicate = true> <Delay = 2.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 48 [1/1] (1.81ns)   --->   "switch i2 %i_0, label %branch2 [
+    i2 0, label %branch0
+    i2 1, label %branch1
+  ]" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 48 'switch' <Predicate = true> <Delay = 1.81>
+ST_3 : Operation 49 [1/1] (1.81ns)   --->   "br label %branch0" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 49 'br' <Predicate = (i_0 == 1)> <Delay = 1.81>
+ST_3 : Operation 50 [1/1] (1.81ns)   --->   "br label %branch0" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 50 'br' <Predicate = (i_0 != 0 & i_0 != 1)> <Delay = 1.81>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%trunc_ln169 = trunc i63 %p_Result_s to i16" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 51 'trunc' 'trunc_ln169' <Predicate = true> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 1.13>
+ST_4 : Operation 52 [1/1] (0.00ns)   --->   "%p_Val2_s = phi i32 [ %out_bits_2_V_1_load, %branch1 ], [ %out_bits_2_V_2_load, %branch2 ], [ %out_bits_2_V_load, %0 ]" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425]   --->   Operation 52 'phi' 'p_Val2_s' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_8 = call i17 @_ssdm_op_BitConcatenate.i17.i16.i1(i16 %trunc_ln169, i1 true)" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:426]   --->   Operation 53 'bitconcatenate' 'tmp_8' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 54 [1/1] (0.00ns)   --->   "%out_bits_0_V = call i32 @_ssdm_op_PartSet.i32.i32.i17.i32.i32(i32 %p_Val2_s, i17 %tmp_8, i32 15, i32 31)" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:426]   --->   Operation 54 'partset' 'out_bits_0_V' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 55 [1/1] (1.13ns)   --->   "switch i2 %i_0, label %branch6 [
+    i2 0, label %branch0..preheader.backedge_crit_edge
+    i2 1, label %branch5
+  ]" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:426]   --->   Operation 55 'switch' <Predicate = true> <Delay = 1.13>
+ST_4 : Operation 56 [1/1] (0.00ns)   --->   "store i32 %out_bits_0_V, i32* %out_bits_2_V_1" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:426]   --->   Operation 56 'store' <Predicate = (i_0 == 1)> <Delay = 0.00>
+ST_4 : Operation 57 [1/1] (0.00ns)   --->   "br label %.preheader.backedge" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:426]   --->   Operation 57 'br' <Predicate = (i_0 == 1)> <Delay = 0.00>
+ST_4 : Operation 58 [1/1] (0.00ns)   --->   "store i32 %out_bits_0_V, i32* %out_bits_2_V" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:426]   --->   Operation 58 'store' <Predicate = (i_0 == 0)> <Delay = 0.00>
+ST_4 : Operation 59 [1/1] (0.00ns)   --->   "br label %.preheader.backedge" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:426]   --->   Operation 59 'br' <Predicate = (i_0 == 0)> <Delay = 0.00>
+ST_4 : Operation 60 [1/1] (0.00ns)   --->   "store i32 %out_bits_0_V, i32* %out_bits_2_V_2" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:426]   --->   Operation 60 'store' <Predicate = (i_0 != 0 & i_0 != 1)> <Delay = 0.00>
+ST_4 : Operation 61 [1/1] (0.00ns)   --->   "br label %.preheader.backedge" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:426]   --->   Operation 61 'br' <Predicate = (i_0 != 0 & i_0 != 1)> <Delay = 0.00>
+ST_4 : Operation 62 [1/1] (0.00ns)   --->   "br label %.preheader"   --->   Operation 62 'br' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 2> <Delay = 5.35>
+ST_5 : Operation 63 [1/1] (0.00ns)   --->   "%i1_0 = phi i3 [ 0, %1 ], [ %i_3, %branch8.backedge ]"   --->   Operation 63 'phi' 'i1_0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 64 [1/1] (1.13ns)   --->   "%icmp_ln434 = icmp eq i3 %i1_0, -4" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:434]   --->   Operation 64 'icmp' 'icmp_ln434' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 65 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)"   --->   Operation 65 'speclooptripcount' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 66 [1/1] (1.65ns)   --->   "%i_3 = add i3 %i1_0, 1" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:434]   --->   Operation 66 'add' 'i_3' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 67 [1/1] (0.00ns)   --->   "br i1 %icmp_ln434, label %_ZN8ap_fixedILi63ELi1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi63ELi1ELb0ELS0_5ELS1_3ELi0EEERK13ap_fixed_baseIXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.preheader, label %2" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:434]   --->   Operation 67 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 68 [1/1] (0.00ns)   --->   "%trunc_ln510 = trunc i3 %i1_0 to i2" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:435]   --->   Operation 68 'trunc' 'trunc_ln510' <Predicate = (!icmp_ln434)> <Delay = 0.00>
+ST_5 : Operation 69 [1/1] (1.95ns)   --->   "%p_Val2_59 = call i32 @_ssdm_op_Mux.ap_auto.4i32.i2(i32 %out_bits_2_V_load, i32 %out_bits_2_V_1_load, i32 %out_bits_2_V_2_load, i32 %p_Result_45, i2 %trunc_ln510)" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:435]   --->   Operation 69 'mux' 'p_Val2_59' <Predicate = (!icmp_ln434)> <Delay = 1.95> <Core = "MuxnS">   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 70 [1/1] (0.00ns)   --->   "%p_Result_46 = call i32 @_ssdm_op_PartSelect.i32.i32.i32.i32(i32 %p_Val2_59, i32 31, i32 0) nounwind" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_normalize.h:110->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:435]   --->   Operation 70 'partselect' 'p_Result_46' <Predicate = (!icmp_ln434)> <Delay = 0.00>
+ST_5 : Operation 71 [1/1] (3.39ns)   --->   "%c_0 = call i32 @llvm.cttz.i32(i32 %p_Result_46, i1 true) nounwind" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_normalize.h:110->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:435]   --->   Operation 71 'cttz' 'c_0' <Predicate = (!icmp_ln434)> <Delay = 3.39> <Core = "CTTZ">   --->   Core 64 'CTTZ' <Latency = 0> <II = 1> <Delay = 3.39> <FuncUnit> <Opcode : 'cttz'> <InPorts = 1> <OutPorts = 1>
+ST_5 : Operation 72 [1/1] (1.30ns)   --->   "switch i2 %trunc_ln510, label %branch11 [
+    i2 0, label %.branch8.backedge_crit_edge
+    i2 1, label %branch9
+    i2 -2, label %branch10
+  ]" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:435]   --->   Operation 72 'switch' <Predicate = (!icmp_ln434)> <Delay = 1.30>
+ST_5 : Operation 73 [1/1] (0.00ns)   --->   "store i32 %c_0, i32* %c_3_3" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:435]   --->   Operation 73 'store' <Predicate = (!icmp_ln434 & trunc_ln510 == 2)> <Delay = 0.00>
+ST_5 : Operation 74 [1/1] (0.00ns)   --->   "br label %branch8.backedge" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:435]   --->   Operation 74 'br' <Predicate = (!icmp_ln434 & trunc_ln510 == 2)> <Delay = 0.00>
+ST_5 : Operation 75 [1/1] (0.00ns)   --->   "store i32 %c_0, i32* %c_3_2" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:435]   --->   Operation 75 'store' <Predicate = (!icmp_ln434 & trunc_ln510 == 1)> <Delay = 0.00>
+ST_5 : Operation 76 [1/1] (0.00ns)   --->   "br label %branch8.backedge" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:435]   --->   Operation 76 'br' <Predicate = (!icmp_ln434 & trunc_ln510 == 1)> <Delay = 0.00>
+ST_5 : Operation 77 [1/1] (0.00ns)   --->   "store i32 %c_0, i32* %c_3_1" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:435]   --->   Operation 77 'store' <Predicate = (!icmp_ln434 & trunc_ln510 == 0)> <Delay = 0.00>
+ST_5 : Operation 78 [1/1] (0.00ns)   --->   "br label %branch8.backedge" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:435]   --->   Operation 78 'br' <Predicate = (!icmp_ln434 & trunc_ln510 == 0)> <Delay = 0.00>
+ST_5 : Operation 79 [1/1] (0.00ns)   --->   "store i32 %c_0, i32* %c_3" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:435]   --->   Operation 79 'store' <Predicate = (!icmp_ln434 & trunc_ln510 == 3)> <Delay = 0.00>
+ST_5 : Operation 80 [1/1] (0.00ns)   --->   "br label %branch8.backedge" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:435]   --->   Operation 80 'br' <Predicate = (!icmp_ln434 & trunc_ln510 == 3)> <Delay = 0.00>
+ST_5 : Operation 81 [1/1] (0.00ns)   --->   "br label %branch8"   --->   Operation 81 'br' <Predicate = (!icmp_ln434)> <Delay = 0.00>
+ST_5 : Operation 82 [1/1] (1.76ns)   --->   "br label %_ZN8ap_fixedILi63ELi1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi63ELi1ELb0ELS0_5ELS1_3ELi0EEERK13ap_fixed_baseIXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:441]   --->   Operation 82 'br' <Predicate = (icmp_ln434)> <Delay = 1.76>
+
+State 6 <SV = 3> <Delay = 4.51>
+ST_6 : Operation 83 [1/1] (0.00ns)   --->   "%p_0119_0 = phi i63 [ %r_V_44, %_ZNK13ap_fixed_baseILi63ELi1ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EElsEi.exit ], [ %in_V_read, %_ZN8ap_fixedILi63ELi1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi63ELi1ELb0ELS0_5ELS1_3ELi0EEERK13ap_fixed_baseIXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.preheader ]"   --->   Operation 83 'phi' 'p_0119_0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 84 [1/1] (0.00ns)   --->   "%shift_0 = phi i32 [ %shift, %_ZNK13ap_fixed_baseILi63ELi1ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EElsEi.exit ], [ 0, %_ZN8ap_fixedILi63ELi1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi63ELi1ELb0ELS0_5ELS1_3ELi0EEERK13ap_fixed_baseIXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.preheader ]"   --->   Operation 84 'phi' 'shift_0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 85 [1/1] (0.00ns)   --->   "%i2_0 = phi i3 [ %i_4, %_ZNK13ap_fixed_baseILi63ELi1ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EElsEi.exit ], [ 0, %_ZN8ap_fixedILi63ELi1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi63ELi1ELb0ELS0_5ELS1_3ELi0EEERK13ap_fixed_baseIXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.preheader ]"   --->   Operation 85 'phi' 'i2_0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 86 [1/1] (1.13ns)   --->   "%icmp_ln441 = icmp eq i3 %i2_0, -4" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:441]   --->   Operation 86 'icmp' 'icmp_ln441' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 87 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 4, i64 2)"   --->   Operation 87 'speclooptripcount' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 88 [1/1] (1.65ns)   --->   "%i_4 = add i3 %i2_0, 1" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:441]   --->   Operation 88 'add' 'i_4' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 89 [1/1] (1.76ns)   --->   "br i1 %icmp_ln441, label %.loopexit_ifconv, label %_ZNK13ap_fixed_baseILi63ELi1ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EElsEi.exit" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:441]   --->   Operation 89 'br' <Predicate = true> <Delay = 1.76>
+ST_6 : Operation 90 [1/1] (0.00ns)   --->   "%c_3_load = load i32* %c_3" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:442]   --->   Operation 90 'load' 'c_3_load' <Predicate = (!icmp_ln441)> <Delay = 0.00>
+ST_6 : Operation 91 [1/1] (0.00ns)   --->   "%c_3_1_load = load i32* %c_3_1" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:442]   --->   Operation 91 'load' 'c_3_1_load' <Predicate = (!icmp_ln441)> <Delay = 0.00>
+ST_6 : Operation 92 [1/1] (0.00ns)   --->   "%c_3_2_load = load i32* %c_3_2" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:442]   --->   Operation 92 'load' 'c_3_2_load' <Predicate = (!icmp_ln441)> <Delay = 0.00>
+ST_6 : Operation 93 [1/1] (0.00ns)   --->   "%c_3_3_load = load i32* %c_3_3" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:442]   --->   Operation 93 'load' 'c_3_3_load' <Predicate = (!icmp_ln441)> <Delay = 0.00>
+ST_6 : Operation 94 [1/1] (0.00ns)   --->   "%trunc_ln442 = trunc i3 %i2_0 to i2" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:442]   --->   Operation 94 'trunc' 'trunc_ln442' <Predicate = (!icmp_ln441)> <Delay = 0.00>
+ST_6 : Operation 95 [1/1] (1.95ns)   --->   "%sh_assign = call i32 @_ssdm_op_Mux.ap_auto.4i32.i2(i32 %c_3_1_load, i32 %c_3_2_load, i32 %c_3_3_load, i32 %c_3_load, i2 %trunc_ln442)" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:442]   --->   Operation 95 'mux' 'sh_assign' <Predicate = (!icmp_ln441)> <Delay = 1.95> <Core = "MuxnS">   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.95> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 96 [1/1] (0.00ns)   --->   "%isNeg = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %sh_assign, i32 31)" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:443]   --->   Operation 96 'bitselect' 'isNeg' <Predicate = (!icmp_ln441)> <Delay = 0.00>
+ST_6 : Operation 97 [1/1] (2.55ns)   --->   "%sub_ln1311 = sub nsw i32 0, %sh_assign" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:443]   --->   Operation 97 'sub' 'sub_ln1311' <Predicate = (!icmp_ln441)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 4> <Delay = 5.29>
+ST_7 : Operation 98 [1/1] (2.55ns)   --->   "%shift = add nsw i32 %sh_assign, %shift_0" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:442]   --->   Operation 98 'add' 'shift' <Predicate = (!icmp_ln441)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 99 [1/1] (0.69ns)   --->   "%ush = select i1 %isNeg, i32 %sub_ln1311, i32 %sh_assign" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:443]   --->   Operation 99 'select' 'ush' <Predicate = (!icmp_ln441)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 100 [1/1] (0.00ns)   --->   "%zext_ln1287 = zext i32 %ush to i63" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:443]   --->   Operation 100 'zext' 'zext_ln1287' <Predicate = (!icmp_ln441)> <Delay = 0.00>
+ST_7 : Operation 101 [1/1] (0.00ns) (grouped into LUT with out node r_V_44)   --->   "%r_V = ashr i63 %p_0119_0, %zext_ln1287" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:443]   --->   Operation 101 'ashr' 'r_V' <Predicate = (!icmp_ln441 & isNeg)> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 4.59> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 102 [1/1] (0.00ns) (grouped into LUT with out node r_V_44)   --->   "%r_V_42 = shl i63 %p_0119_0, %zext_ln1287" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:443]   --->   Operation 102 'shl' 'r_V_42' <Predicate = (!icmp_ln441 & !isNeg)> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 4.59> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 103 [1/1] (4.59ns) (out node of the LUT)   --->   "%r_V_44 = select i1 %isNeg, i63 %r_V, i63 %r_V_42" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:443]   --->   Operation 103 'select' 'r_V_44' <Predicate = (!icmp_ln441)> <Delay = 4.59> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 104 [1/1] (2.47ns)   --->   "%icmp_ln444 = icmp eq i32 %sh_assign, 16" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:444]   --->   Operation 104 'icmp' 'icmp_ln444' <Predicate = (!icmp_ln441)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 105 [1/1] (1.76ns)   --->   "br i1 %icmp_ln444, label %_ZN8ap_fixedILi63ELi1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi63ELi1ELb0ELS0_5ELS1_3ELi0EEERK13ap_fixed_baseIXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit, label %.loopexit_ifconv" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:444]   --->   Operation 105 'br' <Predicate = (!icmp_ln441)> <Delay = 1.76>
+ST_7 : Operation 106 [1/1] (2.78ns)   --->   "%icmp_ln1452 = icmp eq i63 %in_V_read, 0" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:453]   --->   Operation 106 'icmp' 'icmp_ln1452' <Predicate = (!icmp_ln444) | (icmp_ln441)> <Delay = 2.78> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 5> <Delay = 6.03>
+ST_8 : Operation 107 [1/1] (0.00ns) (grouped into LUT with out node significand_V)   --->   "%p_Val2_63 = phi i63 [ %p_0119_0, %_ZN8ap_fixedILi63ELi1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi63ELi1ELb0ELS0_5ELS1_3ELi0EEERK13ap_fixed_baseIXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit ], [ %r_V_44, %_ZNK13ap_fixed_baseILi63ELi1ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EElsEi.exit ]"   --->   Operation 107 'phi' 'p_Val2_63' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 108 [1/1] (0.00ns) (grouped into LUT with out node newexp)   --->   "%shift_1 = phi i32 [ %shift_0, %_ZN8ap_fixedILi63ELi1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi63ELi1ELb0ELS0_5ELS1_3ELi0EEERK13ap_fixed_baseIXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit ], [ %shift, %_ZNK13ap_fixed_baseILi63ELi1ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EElsEi.exit ]"   --->   Operation 108 'phi' 'shift_1' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 109 [1/1] (1.54ns)   --->   "%sub_ln452 = sub i12 1023, %prescale_read" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:452]   --->   Operation 109 'sub' 'sub_ln452' <Predicate = true> <Delay = 1.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 110 [1/1] (0.00ns) (grouped into LUT with out node newexp)   --->   "%sext_ln452 = sext i12 %sub_ln452 to i32" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:452]   --->   Operation 110 'sext' 'sext_ln452' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 111 [1/1] (2.55ns) (out node of the LUT)   --->   "%newexp = sub i32 %sext_ln452, %shift_1" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:452]   --->   Operation 111 'sub' 'newexp' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 112 [1/1] (0.00ns)   --->   "%tmp_12 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %newexp, i32 31)" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:453]   --->   Operation 112 'bitselect' 'tmp_12' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 113 [1/1] (0.97ns)   --->   "%or_ln453 = or i1 %tmp_12, %icmp_ln1452" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:453]   --->   Operation 113 'or' 'or_ln453' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 114 [1/1] (0.00ns)   --->   "%empty = trunc i32 %newexp to i11" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:452]   --->   Operation 114 'trunc' 'empty' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 115 [1/1] (0.00ns) (grouped into LUT with out node significand_V)   --->   "%phitmp2 = call i52 @_ssdm_op_PartSelect.i52.i63.i32.i32(i63 %p_Val2_63, i32 10, i32 61)" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:443]   --->   Operation 115 'partselect' 'phitmp2' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 116 [1/1] (0.95ns) (out node of the LUT)   --->   "%significand_V = select i1 %or_ln453, i52 0, i52 %phitmp2" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:453]   --->   Operation 116 'select' 'significand_V' <Predicate = true> <Delay = 0.95> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 117 [1/1] (0.69ns)   --->   "%out_exp_V = select i1 %or_ln453, i11 0, i11 %empty" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:453]   --->   Operation 117 'select' 'out_exp_V' <Predicate = true> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 118 [1/1] (0.00ns)   --->   "%p_Result_47 = call i64 @_ssdm_op_BitConcatenate.i64.i1.i11.i52(i1 false, i11 %out_exp_V, i52 %significand_V)" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:495->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:512->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:526->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:466]   --->   Operation 118 'bitconcatenate' 'p_Result_47' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 119 [1/1] (0.00ns)   --->   "%bitcast_ln512 = bitcast i64 %p_Result_47 to double" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:512->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:526->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:466]   --->   Operation 119 'bitcast' 'bitcast_ln512' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 120 [1/1] (0.00ns)   --->   "ret double %bitcast_ln512" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:467]   --->   Operation 120 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:423) [10]  (1.77 ns)
+
+ <State 2>: 3.65ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:423) [10]  (0 ns)
+	'sub' operation ('Lo', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425) [21]  (1.83 ns)
+	'sub' operation ('sub_ln566_1', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425) [25]  (1.83 ns)
+
+ <State 3>: 7.54ns
+The critical path consists of the following:
+	'select' operation ('select_ln566_1', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425) [28]  (0 ns)
+	'lshr' operation ('lshr_ln566', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425) [33]  (4.6 ns)
+	'and' operation ('__Result__', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425) [35]  (2.94 ns)
+
+ <State 4>: 1.13ns
+The critical path consists of the following:
+
+ <State 5>: 5.36ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:434) [68]  (0 ns)
+	'mux' operation ('value', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:435) [75]  (1.96 ns)
+	'cttz' operation ('c[0]', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_normalize.h:110->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:435) [77]  (3.4 ns)
+	'store' operation ('store_ln435', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:435) of variable 'c[0]', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_normalize.h:110->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:435 on local variable 'c[3]' [86]  (0 ns)
+
+ <State 6>: 4.51ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:441) [98]  (0 ns)
+	'mux' operation ('sh', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:442) [109]  (1.96 ns)
+	'sub' operation ('sub_ln1311', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:443) [112]  (2.55 ns)
+
+ <State 7>: 5.29ns
+The critical path consists of the following:
+	'select' operation ('sh', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:443) [113]  (0.698 ns)
+	'ashr' operation ('r.V', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:443) [115]  (0 ns)
+	'select' operation ('r.V', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:443) [117]  (4.6 ns)
+
+ <State 8>: 6.03ns
+The critical path consists of the following:
+	'sub' operation ('sub_ln452', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:452) [123]  (1.55 ns)
+	'sub' operation ('newexp', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:452) [125]  (2.55 ns)
+	'or' operation ('or_ln453', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:453) [128]  (0.978 ns)
+	'select' operation ('significand.V', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:453) [131]  (0.954 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

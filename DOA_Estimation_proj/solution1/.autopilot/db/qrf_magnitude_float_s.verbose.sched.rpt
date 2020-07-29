@@ -1,0 +1,701 @@
+
+
+================================================================
+== Vivado HLS Report for 'qrf_magnitude_float_s'
+================================================================
+* Date:           Wed Jul 29 20:31:08 2020
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        DOA_Estimation_proj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.365|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |   48|   48|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 49
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 49
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 49, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 48 
+48 --> 49 
+49 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 5.43>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%b_M_imag_read = call float @_ssdm_op_Read.ap_auto.float(float %b_M_imag)" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:173]   --->   Operation 50 'read' 'b_M_imag_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%b_M_real_read = call float @_ssdm_op_Read.ap_auto.float(float %b_M_real)" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:173]   --->   Operation 51 'read' 'b_M_real_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%a_M_imag_read = call float @_ssdm_op_Read.ap_auto.float(float %a_M_imag)" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:173]   --->   Operation 52 'read' 'a_M_imag_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%a_M_real_read = call float @_ssdm_op_Read.ap_auto.float(float %a_M_real)" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:173]   --->   Operation 53 'read' 'a_M_real_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%p_Val2_s = bitcast float %a_M_real_read to i32" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:310->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:319->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:12->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_fabs.h:13->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/absfloat.cpp:7->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:173]   --->   Operation 54 'bitcast' 'p_Val2_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%trunc_ln368 = trunc i32 %p_Val2_s to i31" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:335->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:348->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:369->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:14->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_fabs.h:13->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/absfloat.cpp:7->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:173]   --->   Operation 55 'trunc' 'trunc_ln368' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%trunc_ln189 = trunc i32 %p_Val2_s to i23" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189]   --->   Operation 56 'trunc' 'trunc_ln189' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%p_Result_s = call i32 @_ssdm_op_BitConcatenate.i32.i1.i31(i1 false, i31 %trunc_ln368)" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:335->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:348->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:369->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:14->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_fabs.h:13->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/absfloat.cpp:7->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:173]   --->   Operation 57 'bitconcatenate' 'p_Result_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%d1_4 = bitcast i32 %p_Result_s to float" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:348->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:369->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:14->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_fabs.h:13->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/absfloat.cpp:7->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:173]   --->   Operation 58 'bitcast' 'd1_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%p_Val2_64 = bitcast float %a_M_imag_read to i32" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:310->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:319->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:12->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_fabs.h:13->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/absfloat.cpp:7->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:174]   --->   Operation 59 'bitcast' 'p_Val2_64' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%trunc_ln368_1 = trunc i32 %p_Val2_64 to i31" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:335->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:348->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:369->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:14->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_fabs.h:13->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/absfloat.cpp:7->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:174]   --->   Operation 60 'trunc' 'trunc_ln368_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%trunc_ln189_1 = trunc i32 %p_Val2_64 to i23" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189]   --->   Operation 61 'trunc' 'trunc_ln189_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%p_Result_48 = call i32 @_ssdm_op_BitConcatenate.i32.i1.i31(i1 false, i31 %trunc_ln368_1)" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:335->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:348->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:369->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:14->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_fabs.h:13->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/absfloat.cpp:7->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:174]   --->   Operation 62 'bitconcatenate' 'p_Result_48' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%d2_4 = bitcast i32 %p_Result_48 to float" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:348->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:369->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:14->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_fabs.h:13->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/absfloat.cpp:7->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:174]   --->   Operation 63 'bitcast' 'd2_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%p_Val2_65 = bitcast float %b_M_real_read to i32" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:310->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:319->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:12->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_fabs.h:13->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/absfloat.cpp:7->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:175]   --->   Operation 64 'bitcast' 'p_Val2_65' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%trunc_ln368_2 = trunc i32 %p_Val2_65 to i31" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:335->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:348->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:369->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:14->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_fabs.h:13->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/absfloat.cpp:7->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:175]   --->   Operation 65 'trunc' 'trunc_ln368_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%trunc_ln189_2 = trunc i32 %p_Val2_65 to i23" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189]   --->   Operation 66 'trunc' 'trunc_ln189_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%p_Result_49 = call i32 @_ssdm_op_BitConcatenate.i32.i1.i31(i1 false, i31 %trunc_ln368_2)" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:335->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:348->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:369->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:14->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_fabs.h:13->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/absfloat.cpp:7->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:175]   --->   Operation 67 'bitconcatenate' 'p_Result_49' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%largest_4 = bitcast i32 %p_Result_49 to float" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:348->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:369->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:14->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_fabs.h:13->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/absfloat.cpp:7->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:175]   --->   Operation 68 'bitcast' 'largest_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%p_Val2_66 = bitcast float %b_M_imag_read to i32" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:310->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:319->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:12->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_fabs.h:13->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/absfloat.cpp:7->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:176]   --->   Operation 69 'bitcast' 'p_Val2_66' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%trunc_ln368_3 = trunc i32 %p_Val2_66 to i31" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:335->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:348->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:369->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:14->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_fabs.h:13->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/absfloat.cpp:7->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:176]   --->   Operation 70 'trunc' 'trunc_ln368_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%trunc_ln189_3 = trunc i32 %p_Val2_66 to i23" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189]   --->   Operation 71 'trunc' 'trunc_ln189_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%p_Result_50 = call i32 @_ssdm_op_BitConcatenate.i32.i1.i31(i1 false, i31 %trunc_ln368_3)" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:335->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:348->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:369->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:14->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_fabs.h:13->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/absfloat.cpp:7->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:176]   --->   Operation 72 'bitconcatenate' 'p_Result_50' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%d3 = bitcast i32 %p_Result_50 to float" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:348->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:369->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:14->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_fabs.h:13->r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/absfloat.cpp:7->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:176]   --->   Operation 73 'bitcast' 'd3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%tmp_1 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %p_Val2_s, i32 23, i32 30)" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 74 'partselect' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%tmp_2 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %p_Val2_64, i32 23, i32 30)" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 75 'partselect' 'tmp_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (1.55ns)   --->   "%icmp_ln179 = icmp ne i8 %tmp_1, -1" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 76 'icmp' 'icmp_ln179' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 77 [1/1] (2.44ns)   --->   "%icmp_ln179_1 = icmp eq i23 %trunc_ln189, 0" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 77 'icmp' 'icmp_ln179_1' <Predicate = true> <Delay = 2.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 78 [1/1] (0.97ns)   --->   "%or_ln179 = or i1 %icmp_ln179_1, %icmp_ln179" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 78 'or' 'or_ln179' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 79 [1/1] (1.55ns)   --->   "%icmp_ln179_2 = icmp ne i8 %tmp_2, -1" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 79 'icmp' 'icmp_ln179_2' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 80 [1/1] (2.44ns)   --->   "%icmp_ln179_3 = icmp eq i23 %trunc_ln189_1, 0" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 80 'icmp' 'icmp_ln179_3' <Predicate = true> <Delay = 2.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 81 [1/1] (0.97ns)   --->   "%or_ln179_1 = or i1 %icmp_ln179_3, %icmp_ln179_2" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 81 'or' 'or_ln179_1' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 82 [2/2] (5.43ns)   --->   "%tmp_3 = fcmp ogt float %d1_4, %d2_4" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 82 'fcmp' 'tmp_3' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_4 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %p_Val2_65, i32 23, i32 30)" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 83 'partselect' 'tmp_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 84 [1/1] (1.55ns)   --->   "%icmp_ln179_4 = icmp ne i8 %tmp_4, -1" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 84 'icmp' 'icmp_ln179_4' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 85 [1/1] (2.44ns)   --->   "%icmp_ln179_5 = icmp eq i23 %trunc_ln189_2, 0" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 85 'icmp' 'icmp_ln179_5' <Predicate = true> <Delay = 2.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 86 [1/1] (0.97ns)   --->   "%or_ln179_2 = or i1 %icmp_ln179_5, %icmp_ln179_4" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 86 'or' 'or_ln179_2' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 87 [2/2] (5.43ns)   --->   "%tmp_5 = fcmp ogt float %d1_4, %largest_4" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 87 'fcmp' 'tmp_5' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 88 [1/1] (0.00ns)   --->   "%tmp_6 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %p_Val2_66, i32 23, i32 30)" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 88 'partselect' 'tmp_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 89 [1/1] (1.55ns)   --->   "%icmp_ln179_6 = icmp ne i8 %tmp_6, -1" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 89 'icmp' 'icmp_ln179_6' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 90 [1/1] (2.44ns)   --->   "%icmp_ln179_7 = icmp eq i23 %trunc_ln189_3, 0" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 90 'icmp' 'icmp_ln179_7' <Predicate = true> <Delay = 2.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 91 [1/1] (0.97ns)   --->   "%or_ln179_3 = or i1 %icmp_ln179_7, %icmp_ln179_6" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 91 'or' 'or_ln179_3' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 92 [2/2] (5.43ns)   --->   "%tmp_7 = fcmp ogt float %d1_4, %d3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 92 'fcmp' 'tmp_7' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 93 [2/2] (5.43ns)   --->   "%tmp_8 = fcmp ogt float %d2_4, %d1_4" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184]   --->   Operation 93 'fcmp' 'tmp_8' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 94 [2/2] (5.43ns)   --->   "%tmp_9 = fcmp ogt float %d2_4, %largest_4" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184]   --->   Operation 94 'fcmp' 'tmp_9' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 95 [2/2] (5.43ns)   --->   "%tmp_10 = fcmp ogt float %d2_4, %d3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184]   --->   Operation 95 'fcmp' 'tmp_10' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 96 [2/2] (5.43ns)   --->   "%tmp_11 = fcmp ogt float %largest_4, %d1_4" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189]   --->   Operation 96 'fcmp' 'tmp_11' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 97 [2/2] (5.43ns)   --->   "%tmp_12 = fcmp ogt float %largest_4, %d2_4" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189]   --->   Operation 97 'fcmp' 'tmp_12' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 98 [2/2] (5.43ns)   --->   "%tmp_13 = fcmp ogt float %largest_4, %d3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189]   --->   Operation 98 'fcmp' 'tmp_13' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 8.36>
+ST_2 : Operation 99 [1/1] (0.97ns)   --->   "%and_ln179 = and i1 %or_ln179, %or_ln179_1" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 99 'and' 'and_ln179' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 100 [1/2] (5.43ns)   --->   "%tmp_3 = fcmp ogt float %d1_4, %d2_4" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 100 'fcmp' 'tmp_3' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 101 [1/1] (0.00ns) (grouped into LUT with out node and_ln179_1)   --->   "%and_ln179_2 = and i1 %and_ln179, %tmp_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 101 'and' 'and_ln179_2' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 102 [1/1] (0.97ns)   --->   "%and_ln179_3 = and i1 %or_ln179, %or_ln179_2" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 102 'and' 'and_ln179_3' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 103 [1/2] (5.43ns)   --->   "%tmp_5 = fcmp ogt float %d1_4, %largest_4" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 103 'fcmp' 'tmp_5' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 104 [1/1] (0.00ns) (grouped into LUT with out node and_ln179_7)   --->   "%and_ln179_4 = and i1 %and_ln179_3, %tmp_5" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 104 'and' 'and_ln179_4' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 105 [1/1] (0.00ns) (grouped into LUT with out node and_ln179_7)   --->   "%and_ln179_5 = and i1 %or_ln179, %or_ln179_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 105 'and' 'and_ln179_5' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 106 [1/2] (5.43ns)   --->   "%tmp_7 = fcmp ogt float %d1_4, %d3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 106 'fcmp' 'tmp_7' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 107 [1/1] (0.00ns) (grouped into LUT with out node and_ln179_7)   --->   "%and_ln179_6 = and i1 %and_ln179_5, %tmp_7" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 107 'and' 'and_ln179_6' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 108 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln179_7 = and i1 %and_ln179_4, %and_ln179_6" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 108 'and' 'and_ln179_7' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 109 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln179_1 = and i1 %and_ln179_7, %and_ln179_2" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 109 'and' 'and_ln179_1' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 110 [1/2] (5.43ns)   --->   "%tmp_8 = fcmp ogt float %d2_4, %d1_4" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184]   --->   Operation 110 'fcmp' 'tmp_8' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 111 [1/1] (0.00ns) (grouped into LUT with out node and_ln184_7)   --->   "%and_ln184 = and i1 %and_ln179, %tmp_8" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184]   --->   Operation 111 'and' 'and_ln184' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 112 [1/1] (0.97ns)   --->   "%and_ln184_1 = and i1 %or_ln179_1, %or_ln179_2" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184]   --->   Operation 112 'and' 'and_ln184_1' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 113 [1/2] (5.43ns)   --->   "%tmp_9 = fcmp ogt float %d2_4, %largest_4" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184]   --->   Operation 113 'fcmp' 'tmp_9' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 114 [1/1] (0.00ns) (grouped into LUT with out node and_ln184_5)   --->   "%and_ln184_2 = and i1 %and_ln184_1, %tmp_9" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184]   --->   Operation 114 'and' 'and_ln184_2' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 115 [1/1] (0.00ns) (grouped into LUT with out node and_ln184_5)   --->   "%and_ln184_3 = and i1 %or_ln179_1, %or_ln179_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184]   --->   Operation 115 'and' 'and_ln184_3' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 116 [1/2] (5.43ns)   --->   "%tmp_10 = fcmp ogt float %d2_4, %d3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184]   --->   Operation 116 'fcmp' 'tmp_10' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 117 [1/1] (0.00ns) (grouped into LUT with out node and_ln184_5)   --->   "%and_ln184_4 = and i1 %and_ln184_3, %tmp_10" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184]   --->   Operation 117 'and' 'and_ln184_4' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 118 [1/2] (5.43ns)   --->   "%tmp_11 = fcmp ogt float %largest_4, %d1_4" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189]   --->   Operation 118 'fcmp' 'tmp_11' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 119 [1/1] (0.00ns) (grouped into LUT with out node and_ln189_1)   --->   "%and_ln189 = and i1 %and_ln179_3, %tmp_11" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189]   --->   Operation 119 'and' 'and_ln189' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 120 [1/2] (5.43ns)   --->   "%tmp_12 = fcmp ogt float %largest_4, %d2_4" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189]   --->   Operation 120 'fcmp' 'tmp_12' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 121 [1/1] (0.00ns) (grouped into LUT with out node and_ln189_5)   --->   "%and_ln189_2 = and i1 %and_ln184_1, %tmp_12" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189]   --->   Operation 121 'and' 'and_ln189_2' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 122 [1/1] (0.00ns) (grouped into LUT with out node and_ln189_5)   --->   "%and_ln189_3 = and i1 %or_ln179_2, %or_ln179_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189]   --->   Operation 122 'and' 'and_ln189_3' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 123 [1/2] (5.43ns)   --->   "%tmp_13 = fcmp ogt float %largest_4, %d3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189]   --->   Operation 123 'fcmp' 'tmp_13' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 124 [1/1] (0.00ns) (grouped into LUT with out node and_ln189_5)   --->   "%and_ln189_4 = and i1 %and_ln189_3, %tmp_13" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189]   --->   Operation 124 'and' 'and_ln189_4' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 125 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln189_5 = and i1 %and_ln189_2, %and_ln189_4" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189]   --->   Operation 125 'and' 'and_ln189_5' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 126 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln189_1 = and i1 %and_ln189_5, %and_ln189" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189]   --->   Operation 126 'and' 'and_ln189_1' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 127 [1/1] (0.00ns) (grouped into LUT with out node and_ln184_7)   --->   "%xor_ln179 = xor i1 %and_ln179_1, true" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 127 'xor' 'xor_ln179' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 128 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln184_5 = and i1 %and_ln184_2, %and_ln184_4" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184]   --->   Operation 128 'and' 'and_ln184_5' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 129 [1/1] (0.00ns) (grouped into LUT with out node and_ln184_7)   --->   "%and_ln184_6 = and i1 %and_ln184, %xor_ln179" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184]   --->   Operation 129 'and' 'and_ln184_6' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 130 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln184_7 = and i1 %and_ln184_6, %and_ln184_5" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184]   --->   Operation 130 'and' 'and_ln184_7' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 6.82>
+ST_3 : Operation 131 [1/1] (0.00ns) (grouped into LUT with out node d3_2)   --->   "%d3_1 = select i1 %and_ln189_1, float %d3, float %largest_4" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189]   --->   Operation 131 'select' 'd3_1' <Predicate = (!and_ln179_1 & !and_ln184_7)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 132 [1/1] (0.00ns) (grouped into LUT with out node largest_2)   --->   "%largest_1 = select i1 %and_ln189_1, float %largest_4, float %d3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189]   --->   Operation 132 'select' 'largest_1' <Predicate = (!and_ln179_1 & !and_ln184_7)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 133 [1/1] (0.00ns) (grouped into LUT with out node d1_3)   --->   "%d1 = select i1 %and_ln179_1, float %d2_4, float %d1_4" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 133 'select' 'd1' <Predicate = (!and_ln184_7)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 134 [1/1] (0.69ns) (out node of the LUT)   --->   "%d1_3 = select i1 %and_ln184_7, float %d1_4, float %d1" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184]   --->   Operation 134 'select' 'd1_3' <Predicate = true> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 135 [1/1] (0.00ns) (grouped into LUT with out node d2_3)   --->   "%d2 = select i1 %and_ln179_1, float %largest_4, float %d2_4" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 135 'select' 'd2' <Predicate = (!and_ln184_7)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 136 [1/1] (0.69ns) (out node of the LUT)   --->   "%d2_3 = select i1 %and_ln184_7, float %largest_4, float %d2" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184]   --->   Operation 136 'select' 'd2_3' <Predicate = true> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 137 [1/1] (0.69ns) (out node of the LUT)   --->   "%d3_2 = select i1 %and_ln179_1, float %d3, float %d3_1" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 137 'select' 'd3_2' <Predicate = (!and_ln184_7)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 138 [1/1] (0.69ns) (out node of the LUT)   --->   "%d3_3 = select i1 %and_ln184_7, float %d3, float %d3_2" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184]   --->   Operation 138 'select' 'd3_3' <Predicate = true> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 139 [1/1] (0.69ns) (out node of the LUT)   --->   "%largest_2 = select i1 %and_ln179_1, float %d1_4, float %largest_1" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179]   --->   Operation 139 'select' 'largest_2' <Predicate = (!and_ln184_7)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 140 [1/1] (0.69ns) (out node of the LUT)   --->   "%largest_3 = select i1 %and_ln184_7, float %d2_4, float %largest_2" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184]   --->   Operation 140 'select' 'largest_3' <Predicate = true> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 141 [2/2] (5.43ns)   --->   "%tmp_15 = fcmp oeq float %largest_3, 0.000000e+00" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:201]   --->   Operation 141 'fcmp' 'tmp_15' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 8.17>
+ST_4 : Operation 142 [1/1] (0.00ns)   --->   "%bitcast_ln201 = bitcast float %largest_3 to i32" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:201]   --->   Operation 142 'bitcast' 'bitcast_ln201' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 143 [1/1] (0.00ns)   --->   "%tmp_14 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln201, i32 23, i32 30)" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:201]   --->   Operation 143 'partselect' 'tmp_14' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 144 [1/1] (0.00ns)   --->   "%trunc_ln201 = trunc i32 %bitcast_ln201 to i23" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:201]   --->   Operation 144 'trunc' 'trunc_ln201' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 145 [1/1] (1.55ns)   --->   "%icmp_ln201 = icmp ne i8 %tmp_14, -1" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:201]   --->   Operation 145 'icmp' 'icmp_ln201' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 146 [1/1] (2.44ns)   --->   "%icmp_ln201_1 = icmp eq i23 %trunc_ln201, 0" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:201]   --->   Operation 146 'icmp' 'icmp_ln201_1' <Predicate = true> <Delay = 2.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 147 [1/1] (0.00ns) (grouped into LUT with out node and_ln201)   --->   "%or_ln201 = or i1 %icmp_ln201_1, %icmp_ln201" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:201]   --->   Operation 147 'or' 'or_ln201' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 148 [1/2] (5.43ns)   --->   "%tmp_15 = fcmp oeq float %largest_3, 0.000000e+00" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:201]   --->   Operation 148 'fcmp' 'tmp_15' <Predicate = true> <Delay = 5.43> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 1> <II = 1> <Delay = 5.43> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 149 [1/1] (0.97ns) (out node of the LUT)   --->   "%and_ln201 = and i1 %or_ln201, %tmp_15" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:201]   --->   Operation 149 'and' 'and_ln201' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 150 [1/1] (1.76ns)   --->   "br i1 %and_ln201, label %._crit_edge7, label %0" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:201]   --->   Operation 150 'br' <Predicate = true> <Delay = 1.76>
+ST_4 : Operation 151 [16/16] (6.07ns)   --->   "%x1 = fdiv float %d1_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204]   --->   Operation 151 'fdiv' 'x1' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 152 [16/16] (6.07ns)   --->   "%x2 = fdiv float %d2_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:205]   --->   Operation 152 'fdiv' 'x2' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 153 [16/16] (6.07ns)   --->   "%x3 = fdiv float %d3_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:206]   --->   Operation 153 'fdiv' 'x3' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 6.07>
+ST_5 : Operation 154 [15/16] (6.07ns)   --->   "%x1 = fdiv float %d1_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204]   --->   Operation 154 'fdiv' 'x1' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 155 [15/16] (6.07ns)   --->   "%x2 = fdiv float %d2_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:205]   --->   Operation 155 'fdiv' 'x2' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 156 [15/16] (6.07ns)   --->   "%x3 = fdiv float %d3_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:206]   --->   Operation 156 'fdiv' 'x3' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 6.07>
+ST_6 : Operation 157 [14/16] (6.07ns)   --->   "%x1 = fdiv float %d1_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204]   --->   Operation 157 'fdiv' 'x1' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 158 [14/16] (6.07ns)   --->   "%x2 = fdiv float %d2_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:205]   --->   Operation 158 'fdiv' 'x2' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 159 [14/16] (6.07ns)   --->   "%x3 = fdiv float %d3_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:206]   --->   Operation 159 'fdiv' 'x3' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 6.07>
+ST_7 : Operation 160 [13/16] (6.07ns)   --->   "%x1 = fdiv float %d1_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204]   --->   Operation 160 'fdiv' 'x1' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 161 [13/16] (6.07ns)   --->   "%x2 = fdiv float %d2_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:205]   --->   Operation 161 'fdiv' 'x2' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 162 [13/16] (6.07ns)   --->   "%x3 = fdiv float %d3_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:206]   --->   Operation 162 'fdiv' 'x3' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 6.07>
+ST_8 : Operation 163 [12/16] (6.07ns)   --->   "%x1 = fdiv float %d1_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204]   --->   Operation 163 'fdiv' 'x1' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 164 [12/16] (6.07ns)   --->   "%x2 = fdiv float %d2_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:205]   --->   Operation 164 'fdiv' 'x2' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 165 [12/16] (6.07ns)   --->   "%x3 = fdiv float %d3_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:206]   --->   Operation 165 'fdiv' 'x3' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 6.07>
+ST_9 : Operation 166 [11/16] (6.07ns)   --->   "%x1 = fdiv float %d1_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204]   --->   Operation 166 'fdiv' 'x1' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 167 [11/16] (6.07ns)   --->   "%x2 = fdiv float %d2_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:205]   --->   Operation 167 'fdiv' 'x2' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 168 [11/16] (6.07ns)   --->   "%x3 = fdiv float %d3_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:206]   --->   Operation 168 'fdiv' 'x3' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 6.07>
+ST_10 : Operation 169 [10/16] (6.07ns)   --->   "%x1 = fdiv float %d1_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204]   --->   Operation 169 'fdiv' 'x1' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 170 [10/16] (6.07ns)   --->   "%x2 = fdiv float %d2_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:205]   --->   Operation 170 'fdiv' 'x2' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 171 [10/16] (6.07ns)   --->   "%x3 = fdiv float %d3_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:206]   --->   Operation 171 'fdiv' 'x3' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 6.07>
+ST_11 : Operation 172 [9/16] (6.07ns)   --->   "%x1 = fdiv float %d1_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204]   --->   Operation 172 'fdiv' 'x1' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 173 [9/16] (6.07ns)   --->   "%x2 = fdiv float %d2_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:205]   --->   Operation 173 'fdiv' 'x2' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 174 [9/16] (6.07ns)   --->   "%x3 = fdiv float %d3_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:206]   --->   Operation 174 'fdiv' 'x3' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 6.07>
+ST_12 : Operation 175 [8/16] (6.07ns)   --->   "%x1 = fdiv float %d1_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204]   --->   Operation 175 'fdiv' 'x1' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 176 [8/16] (6.07ns)   --->   "%x2 = fdiv float %d2_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:205]   --->   Operation 176 'fdiv' 'x2' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 177 [8/16] (6.07ns)   --->   "%x3 = fdiv float %d3_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:206]   --->   Operation 177 'fdiv' 'x3' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 6.07>
+ST_13 : Operation 178 [7/16] (6.07ns)   --->   "%x1 = fdiv float %d1_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204]   --->   Operation 178 'fdiv' 'x1' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 179 [7/16] (6.07ns)   --->   "%x2 = fdiv float %d2_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:205]   --->   Operation 179 'fdiv' 'x2' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 180 [7/16] (6.07ns)   --->   "%x3 = fdiv float %d3_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:206]   --->   Operation 180 'fdiv' 'x3' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 6.07>
+ST_14 : Operation 181 [6/16] (6.07ns)   --->   "%x1 = fdiv float %d1_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204]   --->   Operation 181 'fdiv' 'x1' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 182 [6/16] (6.07ns)   --->   "%x2 = fdiv float %d2_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:205]   --->   Operation 182 'fdiv' 'x2' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 183 [6/16] (6.07ns)   --->   "%x3 = fdiv float %d3_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:206]   --->   Operation 183 'fdiv' 'x3' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 6.07>
+ST_15 : Operation 184 [5/16] (6.07ns)   --->   "%x1 = fdiv float %d1_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204]   --->   Operation 184 'fdiv' 'x1' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 185 [5/16] (6.07ns)   --->   "%x2 = fdiv float %d2_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:205]   --->   Operation 185 'fdiv' 'x2' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 186 [5/16] (6.07ns)   --->   "%x3 = fdiv float %d3_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:206]   --->   Operation 186 'fdiv' 'x3' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 6.07>
+ST_16 : Operation 187 [4/16] (6.07ns)   --->   "%x1 = fdiv float %d1_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204]   --->   Operation 187 'fdiv' 'x1' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 188 [4/16] (6.07ns)   --->   "%x2 = fdiv float %d2_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:205]   --->   Operation 188 'fdiv' 'x2' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 189 [4/16] (6.07ns)   --->   "%x3 = fdiv float %d3_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:206]   --->   Operation 189 'fdiv' 'x3' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 6.07>
+ST_17 : Operation 190 [3/16] (6.07ns)   --->   "%x1 = fdiv float %d1_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204]   --->   Operation 190 'fdiv' 'x1' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 191 [3/16] (6.07ns)   --->   "%x2 = fdiv float %d2_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:205]   --->   Operation 191 'fdiv' 'x2' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 192 [3/16] (6.07ns)   --->   "%x3 = fdiv float %d3_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:206]   --->   Operation 192 'fdiv' 'x3' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 6.07>
+ST_18 : Operation 193 [2/16] (6.07ns)   --->   "%x1 = fdiv float %d1_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204]   --->   Operation 193 'fdiv' 'x1' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 194 [2/16] (6.07ns)   --->   "%x2 = fdiv float %d2_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:205]   --->   Operation 194 'fdiv' 'x2' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 195 [2/16] (6.07ns)   --->   "%x3 = fdiv float %d3_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:206]   --->   Operation 195 'fdiv' 'x3' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 6.07>
+ST_19 : Operation 196 [1/16] (6.07ns)   --->   "%x1 = fdiv float %d1_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204]   --->   Operation 196 'fdiv' 'x1' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 197 [1/16] (6.07ns)   --->   "%x2 = fdiv float %d2_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:205]   --->   Operation 197 'fdiv' 'x2' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 198 [1/16] (6.07ns)   --->   "%x3 = fdiv float %d3_3, %largest_3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:206]   --->   Operation 198 'fdiv' 'x3' <Predicate = (!and_ln201)> <Delay = 6.07> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 15> <II = 1> <Delay = 6.07> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 5.70>
+ST_20 : Operation 199 [4/4] (5.70ns)   --->   "%x1_sqd = fmul float %x1, %x1" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:207]   --->   Operation 199 'fmul' 'x1_sqd' <Predicate = (!and_ln201)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 200 [4/4] (5.70ns)   --->   "%x2_sqd = fmul float %x2, %x2" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:208]   --->   Operation 200 'fmul' 'x2_sqd' <Predicate = (!and_ln201)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 201 [4/4] (5.70ns)   --->   "%x3_sqd = fmul float %x3, %x3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:209]   --->   Operation 201 'fmul' 'x3_sqd' <Predicate = (!and_ln201)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 5.70>
+ST_21 : Operation 202 [3/4] (5.70ns)   --->   "%x1_sqd = fmul float %x1, %x1" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:207]   --->   Operation 202 'fmul' 'x1_sqd' <Predicate = (!and_ln201)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 203 [3/4] (5.70ns)   --->   "%x2_sqd = fmul float %x2, %x2" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:208]   --->   Operation 203 'fmul' 'x2_sqd' <Predicate = (!and_ln201)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 204 [3/4] (5.70ns)   --->   "%x3_sqd = fmul float %x3, %x3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:209]   --->   Operation 204 'fmul' 'x3_sqd' <Predicate = (!and_ln201)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 21> <Delay = 5.70>
+ST_22 : Operation 205 [2/4] (5.70ns)   --->   "%x1_sqd = fmul float %x1, %x1" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:207]   --->   Operation 205 'fmul' 'x1_sqd' <Predicate = (!and_ln201)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 206 [2/4] (5.70ns)   --->   "%x2_sqd = fmul float %x2, %x2" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:208]   --->   Operation 206 'fmul' 'x2_sqd' <Predicate = (!and_ln201)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 207 [2/4] (5.70ns)   --->   "%x3_sqd = fmul float %x3, %x3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:209]   --->   Operation 207 'fmul' 'x3_sqd' <Predicate = (!and_ln201)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 22> <Delay = 5.70>
+ST_23 : Operation 208 [1/4] (5.70ns)   --->   "%x1_sqd = fmul float %x1, %x1" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:207]   --->   Operation 208 'fmul' 'x1_sqd' <Predicate = (!and_ln201)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 209 [1/4] (5.70ns)   --->   "%x2_sqd = fmul float %x2, %x2" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:208]   --->   Operation 209 'fmul' 'x2_sqd' <Predicate = (!and_ln201)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 210 [1/4] (5.70ns)   --->   "%x3_sqd = fmul float %x3, %x3" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:209]   --->   Operation 210 'fmul' 'x3_sqd' <Predicate = (!and_ln201)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 23> <Delay = 7.25>
+ST_24 : Operation 211 [5/5] (7.25ns)   --->   "%s1 = fadd float %x1_sqd, 1.000000e+00" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:211]   --->   Operation 211 'fadd' 's1' <Predicate = (!and_ln201)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 212 [5/5] (7.25ns)   --->   "%s2 = fadd float %x2_sqd, %x3_sqd" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:212]   --->   Operation 212 'fadd' 's2' <Predicate = (!and_ln201)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 24> <Delay = 7.25>
+ST_25 : Operation 213 [4/5] (7.25ns)   --->   "%s1 = fadd float %x1_sqd, 1.000000e+00" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:211]   --->   Operation 213 'fadd' 's1' <Predicate = (!and_ln201)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 214 [4/5] (7.25ns)   --->   "%s2 = fadd float %x2_sqd, %x3_sqd" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:212]   --->   Operation 214 'fadd' 's2' <Predicate = (!and_ln201)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 25> <Delay = 7.25>
+ST_26 : Operation 215 [3/5] (7.25ns)   --->   "%s1 = fadd float %x1_sqd, 1.000000e+00" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:211]   --->   Operation 215 'fadd' 's1' <Predicate = (!and_ln201)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 216 [3/5] (7.25ns)   --->   "%s2 = fadd float %x2_sqd, %x3_sqd" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:212]   --->   Operation 216 'fadd' 's2' <Predicate = (!and_ln201)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 26> <Delay = 7.25>
+ST_27 : Operation 217 [2/5] (7.25ns)   --->   "%s1 = fadd float %x1_sqd, 1.000000e+00" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:211]   --->   Operation 217 'fadd' 's1' <Predicate = (!and_ln201)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 218 [2/5] (7.25ns)   --->   "%s2 = fadd float %x2_sqd, %x3_sqd" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:212]   --->   Operation 218 'fadd' 's2' <Predicate = (!and_ln201)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 28 <SV = 27> <Delay = 7.25>
+ST_28 : Operation 219 [1/5] (7.25ns)   --->   "%s1 = fadd float %x1_sqd, 1.000000e+00" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:211]   --->   Operation 219 'fadd' 's1' <Predicate = (!and_ln201)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 220 [1/5] (7.25ns)   --->   "%s2 = fadd float %x2_sqd, %x3_sqd" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:212]   --->   Operation 220 'fadd' 's2' <Predicate = (!and_ln201)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 28> <Delay = 7.25>
+ST_29 : Operation 221 [5/5] (7.25ns)   --->   "%s3 = fadd float %s1, %s2" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:213]   --->   Operation 221 'fadd' 's3' <Predicate = (!and_ln201)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 30 <SV = 29> <Delay = 7.25>
+ST_30 : Operation 222 [4/5] (7.25ns)   --->   "%s3 = fadd float %s1, %s2" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:213]   --->   Operation 222 'fadd' 's3' <Predicate = (!and_ln201)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 30> <Delay = 7.25>
+ST_31 : Operation 223 [3/5] (7.25ns)   --->   "%s3 = fadd float %s1, %s2" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:213]   --->   Operation 223 'fadd' 's3' <Predicate = (!and_ln201)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 31> <Delay = 7.25>
+ST_32 : Operation 224 [2/5] (7.25ns)   --->   "%s3 = fadd float %s1, %s2" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:213]   --->   Operation 224 'fadd' 's3' <Predicate = (!and_ln201)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 32> <Delay = 7.25>
+ST_33 : Operation 225 [1/5] (7.25ns)   --->   "%s3 = fadd float %s1, %s2" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:213]   --->   Operation 225 'fadd' 's3' <Predicate = (!and_ln201)> <Delay = 7.25> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 33> <Delay = 8.12>
+ST_34 : Operation 226 [12/12] (8.12ns)   --->   "%tmp_i_i = call float @llvm.sqrt.f32(float %s3) nounwind" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215]   --->   Operation 226 'fsqrt' 'tmp_i_i' <Predicate = (!and_ln201)> <Delay = 8.12> <Core = "FSqrt">   --->   Core 108 'FSqrt' <Latency = 11> <II = 1> <Delay = 8.12> <FuncUnit> <Opcode : 'fsqrt'> <InPorts = 1> <OutPorts = 1>
+
+State 35 <SV = 34> <Delay = 8.12>
+ST_35 : Operation 227 [11/12] (8.12ns)   --->   "%tmp_i_i = call float @llvm.sqrt.f32(float %s3) nounwind" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215]   --->   Operation 227 'fsqrt' 'tmp_i_i' <Predicate = (!and_ln201)> <Delay = 8.12> <Core = "FSqrt">   --->   Core 108 'FSqrt' <Latency = 11> <II = 1> <Delay = 8.12> <FuncUnit> <Opcode : 'fsqrt'> <InPorts = 1> <OutPorts = 1>
+
+State 36 <SV = 35> <Delay = 8.12>
+ST_36 : Operation 228 [10/12] (8.12ns)   --->   "%tmp_i_i = call float @llvm.sqrt.f32(float %s3) nounwind" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215]   --->   Operation 228 'fsqrt' 'tmp_i_i' <Predicate = (!and_ln201)> <Delay = 8.12> <Core = "FSqrt">   --->   Core 108 'FSqrt' <Latency = 11> <II = 1> <Delay = 8.12> <FuncUnit> <Opcode : 'fsqrt'> <InPorts = 1> <OutPorts = 1>
+
+State 37 <SV = 36> <Delay = 8.12>
+ST_37 : Operation 229 [9/12] (8.12ns)   --->   "%tmp_i_i = call float @llvm.sqrt.f32(float %s3) nounwind" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215]   --->   Operation 229 'fsqrt' 'tmp_i_i' <Predicate = (!and_ln201)> <Delay = 8.12> <Core = "FSqrt">   --->   Core 108 'FSqrt' <Latency = 11> <II = 1> <Delay = 8.12> <FuncUnit> <Opcode : 'fsqrt'> <InPorts = 1> <OutPorts = 1>
+
+State 38 <SV = 37> <Delay = 8.12>
+ST_38 : Operation 230 [8/12] (8.12ns)   --->   "%tmp_i_i = call float @llvm.sqrt.f32(float %s3) nounwind" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215]   --->   Operation 230 'fsqrt' 'tmp_i_i' <Predicate = (!and_ln201)> <Delay = 8.12> <Core = "FSqrt">   --->   Core 108 'FSqrt' <Latency = 11> <II = 1> <Delay = 8.12> <FuncUnit> <Opcode : 'fsqrt'> <InPorts = 1> <OutPorts = 1>
+
+State 39 <SV = 38> <Delay = 8.12>
+ST_39 : Operation 231 [7/12] (8.12ns)   --->   "%tmp_i_i = call float @llvm.sqrt.f32(float %s3) nounwind" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215]   --->   Operation 231 'fsqrt' 'tmp_i_i' <Predicate = (!and_ln201)> <Delay = 8.12> <Core = "FSqrt">   --->   Core 108 'FSqrt' <Latency = 11> <II = 1> <Delay = 8.12> <FuncUnit> <Opcode : 'fsqrt'> <InPorts = 1> <OutPorts = 1>
+
+State 40 <SV = 39> <Delay = 8.12>
+ST_40 : Operation 232 [6/12] (8.12ns)   --->   "%tmp_i_i = call float @llvm.sqrt.f32(float %s3) nounwind" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215]   --->   Operation 232 'fsqrt' 'tmp_i_i' <Predicate = (!and_ln201)> <Delay = 8.12> <Core = "FSqrt">   --->   Core 108 'FSqrt' <Latency = 11> <II = 1> <Delay = 8.12> <FuncUnit> <Opcode : 'fsqrt'> <InPorts = 1> <OutPorts = 1>
+
+State 41 <SV = 40> <Delay = 8.12>
+ST_41 : Operation 233 [5/12] (8.12ns)   --->   "%tmp_i_i = call float @llvm.sqrt.f32(float %s3) nounwind" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215]   --->   Operation 233 'fsqrt' 'tmp_i_i' <Predicate = (!and_ln201)> <Delay = 8.12> <Core = "FSqrt">   --->   Core 108 'FSqrt' <Latency = 11> <II = 1> <Delay = 8.12> <FuncUnit> <Opcode : 'fsqrt'> <InPorts = 1> <OutPorts = 1>
+
+State 42 <SV = 41> <Delay = 8.12>
+ST_42 : Operation 234 [4/12] (8.12ns)   --->   "%tmp_i_i = call float @llvm.sqrt.f32(float %s3) nounwind" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215]   --->   Operation 234 'fsqrt' 'tmp_i_i' <Predicate = (!and_ln201)> <Delay = 8.12> <Core = "FSqrt">   --->   Core 108 'FSqrt' <Latency = 11> <II = 1> <Delay = 8.12> <FuncUnit> <Opcode : 'fsqrt'> <InPorts = 1> <OutPorts = 1>
+
+State 43 <SV = 42> <Delay = 8.12>
+ST_43 : Operation 235 [3/12] (8.12ns)   --->   "%tmp_i_i = call float @llvm.sqrt.f32(float %s3) nounwind" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215]   --->   Operation 235 'fsqrt' 'tmp_i_i' <Predicate = (!and_ln201)> <Delay = 8.12> <Core = "FSqrt">   --->   Core 108 'FSqrt' <Latency = 11> <II = 1> <Delay = 8.12> <FuncUnit> <Opcode : 'fsqrt'> <InPorts = 1> <OutPorts = 1>
+
+State 44 <SV = 43> <Delay = 8.12>
+ST_44 : Operation 236 [2/12] (8.12ns)   --->   "%tmp_i_i = call float @llvm.sqrt.f32(float %s3) nounwind" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215]   --->   Operation 236 'fsqrt' 'tmp_i_i' <Predicate = (!and_ln201)> <Delay = 8.12> <Core = "FSqrt">   --->   Core 108 'FSqrt' <Latency = 11> <II = 1> <Delay = 8.12> <FuncUnit> <Opcode : 'fsqrt'> <InPorts = 1> <OutPorts = 1>
+
+State 45 <SV = 44> <Delay = 8.12>
+ST_45 : Operation 237 [1/12] (8.12ns)   --->   "%tmp_i_i = call float @llvm.sqrt.f32(float %s3) nounwind" [r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215]   --->   Operation 237 'fsqrt' 'tmp_i_i' <Predicate = (!and_ln201)> <Delay = 8.12> <Core = "FSqrt">   --->   Core 108 'FSqrt' <Latency = 11> <II = 1> <Delay = 8.12> <FuncUnit> <Opcode : 'fsqrt'> <InPorts = 1> <OutPorts = 1>
+
+State 46 <SV = 45> <Delay = 5.70>
+ST_46 : Operation 238 [4/4] (5.70ns)   --->   "%tmp_s = fmul float %largest_3, %tmp_i_i" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215]   --->   Operation 238 'fmul' 'tmp_s' <Predicate = (!and_ln201)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 47 <SV = 46> <Delay = 5.70>
+ST_47 : Operation 239 [3/4] (5.70ns)   --->   "%tmp_s = fmul float %largest_3, %tmp_i_i" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215]   --->   Operation 239 'fmul' 'tmp_s' <Predicate = (!and_ln201)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 48 <SV = 47> <Delay = 5.70>
+ST_48 : Operation 240 [2/4] (5.70ns)   --->   "%tmp_s = fmul float %largest_3, %tmp_i_i" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215]   --->   Operation 240 'fmul' 'tmp_s' <Predicate = (!and_ln201)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 49 <SV = 48> <Delay = 7.47>
+ST_49 : Operation 241 [1/4] (5.70ns)   --->   "%tmp_s = fmul float %largest_3, %tmp_i_i" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215]   --->   Operation 241 'fmul' 'tmp_s' <Predicate = (!and_ln201)> <Delay = 5.70> <Core = "FMul">   --->   Core 106 'FMul' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_49 : Operation 242 [1/1] (1.76ns)   --->   "br label %._crit_edge7" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215]   --->   Operation 242 'br' <Predicate = (!and_ln201)> <Delay = 1.76>
+ST_49 : Operation 243 [1/1] (0.00ns)   --->   "%p_0 = phi float [ %tmp_s, %0 ], [ 0.000000e+00, %_ifconv ]" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215]   --->   Operation 243 'phi' 'p_0' <Predicate = true> <Delay = 0.00>
+ST_49 : Operation 244 [1/1] (0.00ns)   --->   "ret float %p_0" [C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:217]   --->   Operation 244 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 5.43ns
+The critical path consists of the following:
+	wire read on port 'b_M_imag' (C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:173) [5]  (0 ns)
+	'fcmp' operation ('tmp_7', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179) [52]  (5.43 ns)
+
+ <State 2>: 8.37ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_5', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179) [45]  (5.43 ns)
+	'and' operation ('and_ln179_4', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179) [46]  (0 ns)
+	'and' operation ('and_ln179_7', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179) [54]  (0.978 ns)
+	'and' operation ('and_ln179_1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179) [55]  (0.978 ns)
+	'xor' operation ('xor_ln179', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179) [76]  (0 ns)
+	'and' operation ('and_ln184_6', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184) [78]  (0 ns)
+	'and' operation ('and_ln184_7', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184) [79]  (0.978 ns)
+
+ <State 3>: 6.83ns
+The critical path consists of the following:
+	'select' operation ('largest', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:189) [74]  (0 ns)
+	'select' operation ('largest', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:179) [85]  (0.698 ns)
+	'select' operation ('largest', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:184) [86]  (0.698 ns)
+	'fcmp' operation ('tmp_15', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:201) [93]  (5.43 ns)
+
+ <State 4>: 8.18ns
+The critical path consists of the following:
+	'fcmp' operation ('tmp_15', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:201) [93]  (5.43 ns)
+	'and' operation ('and_ln201', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:201) [94]  (0.978 ns)
+	multiplexor before 'phi' operation ('p_0', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) with incoming values : ('tmp_s', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [110]  (1.77 ns)
+
+ <State 5>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('x1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204) [97]  (6.08 ns)
+
+ <State 6>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('x1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204) [97]  (6.08 ns)
+
+ <State 7>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('x1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204) [97]  (6.08 ns)
+
+ <State 8>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('x1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204) [97]  (6.08 ns)
+
+ <State 9>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('x1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204) [97]  (6.08 ns)
+
+ <State 10>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('x1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204) [97]  (6.08 ns)
+
+ <State 11>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('x1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204) [97]  (6.08 ns)
+
+ <State 12>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('x1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204) [97]  (6.08 ns)
+
+ <State 13>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('x1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204) [97]  (6.08 ns)
+
+ <State 14>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('x1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204) [97]  (6.08 ns)
+
+ <State 15>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('x1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204) [97]  (6.08 ns)
+
+ <State 16>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('x1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204) [97]  (6.08 ns)
+
+ <State 17>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('x1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204) [97]  (6.08 ns)
+
+ <State 18>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('x1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204) [97]  (6.08 ns)
+
+ <State 19>: 6.08ns
+The critical path consists of the following:
+	'fdiv' operation ('x1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:204) [97]  (6.08 ns)
+
+ <State 20>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('x1_sqd', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:207) [100]  (5.7 ns)
+
+ <State 21>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('x1_sqd', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:207) [100]  (5.7 ns)
+
+ <State 22>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('x1_sqd', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:207) [100]  (5.7 ns)
+
+ <State 23>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('x1_sqd', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:207) [100]  (5.7 ns)
+
+ <State 24>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('s1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:211) [103]  (7.26 ns)
+
+ <State 25>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('s1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:211) [103]  (7.26 ns)
+
+ <State 26>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('s1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:211) [103]  (7.26 ns)
+
+ <State 27>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('s1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:211) [103]  (7.26 ns)
+
+ <State 28>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('s1', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:211) [103]  (7.26 ns)
+
+ <State 29>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('s3', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:213) [105]  (7.26 ns)
+
+ <State 30>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('s3', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:213) [105]  (7.26 ns)
+
+ <State 31>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('s3', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:213) [105]  (7.26 ns)
+
+ <State 32>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('s3', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:213) [105]  (7.26 ns)
+
+ <State 33>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('s3', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:213) [105]  (7.26 ns)
+
+ <State 34>: 8.13ns
+The critical path consists of the following:
+	'fsqrt' operation ('tmp_i_i', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [106]  (8.13 ns)
+
+ <State 35>: 8.13ns
+The critical path consists of the following:
+	'fsqrt' operation ('tmp_i_i', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [106]  (8.13 ns)
+
+ <State 36>: 8.13ns
+The critical path consists of the following:
+	'fsqrt' operation ('tmp_i_i', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [106]  (8.13 ns)
+
+ <State 37>: 8.13ns
+The critical path consists of the following:
+	'fsqrt' operation ('tmp_i_i', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [106]  (8.13 ns)
+
+ <State 38>: 8.13ns
+The critical path consists of the following:
+	'fsqrt' operation ('tmp_i_i', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [106]  (8.13 ns)
+
+ <State 39>: 8.13ns
+The critical path consists of the following:
+	'fsqrt' operation ('tmp_i_i', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [106]  (8.13 ns)
+
+ <State 40>: 8.13ns
+The critical path consists of the following:
+	'fsqrt' operation ('tmp_i_i', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [106]  (8.13 ns)
+
+ <State 41>: 8.13ns
+The critical path consists of the following:
+	'fsqrt' operation ('tmp_i_i', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [106]  (8.13 ns)
+
+ <State 42>: 8.13ns
+The critical path consists of the following:
+	'fsqrt' operation ('tmp_i_i', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [106]  (8.13 ns)
+
+ <State 43>: 8.13ns
+The critical path consists of the following:
+	'fsqrt' operation ('tmp_i_i', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [106]  (8.13 ns)
+
+ <State 44>: 8.13ns
+The critical path consists of the following:
+	'fsqrt' operation ('tmp_i_i', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [106]  (8.13 ns)
+
+ <State 45>: 8.13ns
+The critical path consists of the following:
+	'fsqrt' operation ('tmp_i_i', r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/src/c++/sqrtfloat.cpp:11->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/utils/x_hls_matrix_utils.h:110->C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [106]  (8.13 ns)
+
+ <State 46>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_s', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [107]  (5.7 ns)
+
+ <State 47>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_s', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [107]  (5.7 ns)
+
+ <State 48>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_s', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [107]  (5.7 ns)
+
+ <State 49>: 7.47ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_s', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [107]  (5.7 ns)
+	multiplexor before 'phi' operation ('p_0', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) with incoming values : ('tmp_s', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [110]  (1.77 ns)
+	'phi' operation ('p_0', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) with incoming values : ('tmp_s', C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:215) [110]  (0 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

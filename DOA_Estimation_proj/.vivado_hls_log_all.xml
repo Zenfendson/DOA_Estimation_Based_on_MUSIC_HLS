@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T21:44:36.395+0800"/>
+        <logs message="@E Simulation failed: SIGSEGV." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T21:44:36.380+0800"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:34:30.718+0800"/>
+      </csimLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Port 'music/DOA_interfer' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:31:43.672+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'music/DOA_src' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:31:43.500+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'sin_or_cos&lt;double>' to 'sin_or_cos_double_s'." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:31:03.113+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'qrf_givens&lt;float>' to 'qrf_givens_float_s'." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:31:03.065+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'qrf_magnitude&lt;float>' to 'qrf_magnitude_float_s'." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:31:03.065+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'sin_or_cos&lt;float>' to 'sin_or_cos_float_s'." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:31:03.049+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'scaled_fixed2ieee.1' to 'scaled_fixed2ieee_1'." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:31:03.049+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Ignored multiple trip count directives for loop 'col_r_assign_loop' in function 'qrf_alt'." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:31:03.018+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Ignored multiple trip count directives for loop 'update_r' in function 'qrf_alt'." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:31:00.997+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Ignored multiple trip count directives for loop 'col_copy_r_i' in function 'qrf_alt'." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:31:00.997+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hls::qrf_alt&lt;false, 4, 4, hls::qrf_traits&lt;4, 4, std::complex&lt;float>, std::complex&lt;float> >, std::complex&lt;float>, std::complex&lt;float> >' to 'qrf_alt' (C:/Xilinx/Vivado/2019.1/common/technology/autopilothls/linear_algebra/hls_qrf.h:108:42)" projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:30:59.287+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hls::qrf_givens&lt;float>' to 'qrf_givens&lt;float>' (C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:271)" projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:30:56.539+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hls::qrf_magnitude&lt;float>' to 'qrf_magnitude&lt;float>' (C:/Xilinx/Vivado/2019.1/common/technology/autopilot\hls/linear_algebra/hls_qrf.h:11:22)" projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:30:56.523+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hotbm_::sin_or_cos&lt;double>' to 'sin_or_cos&lt;double>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_hotbm.h:238)" projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:30:56.523+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hotbm_::sin_or_cos&lt;float>' to 'sin_or_cos&lt;float>' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_hotbm.h:238)" projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:30:56.508+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'scaled_fixed2ieee&lt;29, 1>' to 'scaled_fixed2ieee.1' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:110:37)" projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:30:56.508+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'scaled_fixed2ieee&lt;63, 1>' to 'scaled_fixed2ieee' (r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:110:37)" projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:30:56.508+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'row_assign_loop' (C:/Xilinx/Vivado/2019.1/common/technology/autopilothls/linear_algebra/hls_qrf.h:680:50) in function 'hls::qrf_alt&lt;false, 4, 4, hls::qrf_traits&lt;4, 4, std::complex&lt;float>, std::complex&lt;float> >, std::complex&lt;float>, std::complex&lt;float> >' : &#xD;&#xA;&#xD;&#xA;more than one sub loop." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:30:56.492+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'px' (C:/Xilinx/Vivado/2019.1/common/technology/autopilothls/linear_algebra/hls_qrf.h:618:79) in function 'hls::qrf_alt&lt;false, 4, 4, hls::qrf_traits&lt;4, 4, std::complex&lt;float>, std::complex&lt;float> >, std::complex&lt;float>, std::complex&lt;float> >' : &#xD;&#xA;&#xD;&#xA;more than one sub loop." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:30:55.490+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'rotate' (C:/Xilinx/Vivado/2019.1/common/technology/autopilothls/linear_algebra/hls_qrf.h:643:85) in function 'hls::qrf_alt&lt;false, 4, 4, hls::qrf_traits&lt;4, 4, std::complex&lt;float>, std::complex&lt;float> >, std::complex&lt;float>, std::complex&lt;float> >' : &#xD;&#xA;&#xD;&#xA;more than one sub loop." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:30:55.490+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'row_copy' (C:/Xilinx/Vivado/2019.1/common/technology/autopilothls/linear_algebra/hls_qrf.h:600:43) in function 'hls::qrf_alt&lt;false, 4, 4, hls::qrf_traits&lt;4, 4, std::complex&lt;float>, std::complex&lt;float> >, std::complex&lt;float>, std::complex&lt;float> >' : &#xD;&#xA;&#xD;&#xA;more than one sub loop." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:30:55.490+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-105] Cannot partition array 'r_i._M_imag' (C:/Xilinx/Vivado/2019.1/common/technology/autopilothls/linear_algebra/hls_qrf.h:580): incorrect partition factor 1." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:30:41.208+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-105] Cannot partition array 'r_i._M_real' (C:/Xilinx/Vivado/2019.1/common/technology/autopilothls/linear_algebra/hls_qrf.h:580): incorrect partition factor 1." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:30:39.438+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-105] Cannot partition array 'q_i._M_imag' (C:/Xilinx/Vivado/2019.1/common/technology/autopilothls/linear_algebra/hls_qrf.h:579): incorrect partition factor 1." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:30:39.422+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-105] Cannot partition array 'q_i._M_real' (C:/Xilinx/Vivado/2019.1/common/technology/autopilothls/linear_algebra/hls_qrf.h:579): incorrect partition factor 1." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:30:39.422+0800" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-77] The top function 'music' (src/music.cpp:183) has no outputs. Possible cause(s) are: (1) Output parameters are passed by value; (2) intended outputs (parameters or global variables) are never written; (3) there are infinite loops." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:29:42.374+0800" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] r:/builds/2019.1/continuous/2019_05_24_2552052/src/products/hls/hls_lib/src/hls\utils/x_hls_float_utils.h:425: variable-indexed range selection may cause suboptimal QoR." projectName="DOA_Estimation_proj" solutionName="solution1" date="2020-07-29T20:29:42.374+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
